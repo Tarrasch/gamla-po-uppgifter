@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 3.0 Win">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <META NAME="Author" CONTENT="Pär Söderhjelm">
+  <TITLE>Programmeringsolympiaden - kommentarer till uppgifterna i kvalet 2001</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<P><B><FONT SIZE="+1" FACE="Verdana,Helvetica">Kommentarer till
+uppgifterna i kvalet 2001</FONT></B></P>
+
+<P><FONT COLOR="#990000" SIZE="-1" FACE="Verdana,Helvetica">Kom
+ih&aring;g: Alla s&auml;tt att l&ouml;sa en uppgift &auml;r r&auml;tt
+utom de som &auml;r fel.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">1. Plankan</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Den enklaste l&ouml;sningen
+&auml;r en kort rekursiv algoritm. Man f&ouml;rs&ouml;ker i tur
+och ordning l&auml;gga till en br&auml;da p&aring; 1m, 2m resp.
+3m varefter man k&ouml;r samma funktion igen f&ouml;r &aring;terstoden
+av br&auml;dan. N&auml;r man fyllt precis hela plankan &ouml;kar
+man en r&auml;knare. Det finns m&aring;nga optimeringsm&ouml;jligheter
+(t.ex. med hj&auml;lp av <A HREF="http://riksvasa.haninge.kth.se/ioi">dynamisk
+programmering</A>) men ingen som &auml;r n&ouml;dv&auml;ndig f&ouml;r
+att klara den givna maxl&auml;ngden.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">2. V&aring;gen</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">H&auml;r g&auml;ller det att
+hitta m&ouml;nstret i hur vikterna f&ouml;rdelar sig. Om man b&ouml;rjar
+med 1-kilosvikten m&aring;ste ett av f&ouml;ljande villkor g&auml;lla:</FONT></P>
+
+<UL>
+  <LI><FONT SIZE="-1" FACE="Verdana">Om paketets vikt &auml;r delbart
+  med 3: Strunta i 1-kilosvikten.</FONT>
+  <LI><FONT SIZE="-1" FACE="Verdana">Om paketets vikt &auml;r 1
+  mer &auml;n ett tal som &auml;r delbart med 3: L&auml;gg 1-kilosvikten
+  i v&auml;nster v&aring;gsk&aring;l.</FONT>
+  <LI><FONT SIZE="-1" FACE="Verdana">Om paketets vikt &auml;r 1
+  mindre &auml;n ett tal som &auml;r delbart med 3: L&auml;gg 1-kilosvikten
+  i h&ouml;ger v&aring;gsk&aring;l.</FONT>
+</UL>
+
+<P><FONT SIZE="-1" FACE="Verdana">N&auml;r detta &auml;r gjort
+&auml;r ju viktskillnaden mellan sk&aring;larna delbar med 3.
+Om man utf&ouml;r divisionen kan man sedan behandla 3-kilosvikten
+precis som om den v&auml;gde 1 kg. Proceduren forts&auml;tter
+tills inga fler vikter beh&ouml;vs.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">3. Siffersumma</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">F&ouml;r varje startv&auml;rde
+man vill unders&ouml;ka l&aring;ter man helt enkelt serien ha
+sin g&aring;ng. De enstaka siffrorna ber&auml;knas i Pascal och
+C l&auml;mpligen med hj&auml;lp av <B>div</B> och <B>mod</B> respektive
+<B>/</B> och <B>%</B>. Antingen kommer man s&aring; sm&aring;ningom
+fram till 1, eller ocks&aring; kommer man in i en loop och d&aring;
+kan man exempelvis avbryta efter 1000 iterationer eftersom man
+d&aring; &auml;r s&auml;ker p&aring; att man &auml;r inne i en
+loop.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">4. Halsbandet</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Om man letar efter en f&auml;rg
+i taget (f&ouml;r att till sist ta den b&auml;sta l&ouml;sningen
+av de tre f&auml;rgerna), s&aring; g&aring;r uppgiften helt enkelt
+ut p&aring; att man ska hitta de tv&aring; l&auml;ngsta oavbrutna
+sekvenserna. D&aring; kan man n&auml;mligen alltid ta bort p&auml;rlorna
+d&auml;r emellan och f&aring; sin optimala l&ouml;sning. Det finns
+dock tv&aring; sv&aring;righeter. F&ouml;r det f&ouml;rsta ska
+man, om det finns flera m&ouml;jligheter med samma antal p&auml;rlor
+i rad, hitta den som minimerar avst&aring;ndet mellan sekvenserna.
+F&ouml;r det andra kan man beh&ouml;va g&aring; &ouml;ver skarven
+vilket g&ouml;r att det blir sv&aring;rt att definiera avst&aring;ndet
+mellan tv&aring; sekvenser.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">D&auml;rf&ouml;r skulle jag
+f&ouml;resl&aring; en tr&aring;kig men enkel algoritm, som utnyttjar
+datorns snabbhet. Notera att de m&ouml;jligheter till bortplockning
+man kan g&ouml;ra &auml;r max 80 * 80&nbsp;&nbsp;(80 m&ouml;jligheter
+f&ouml;r b&ouml;rjan och 80 f&ouml;r slutet av bortplockningen).
+L&aring;t programmet g&aring; igenom alla dessa (med hj&auml;lp
+av tv&aring; enkla for-loopar) och testa sedan f&ouml;r varje
+f&auml;rg hur m&aring;nga p&auml;rlor som ligger i f&ouml;ljd.
+Ett bra s&auml;tt att f&aring; med skarven &auml;r att l&auml;gga
+tv&aring; halsband i f&ouml;ljd och sedan se till att man plockar
+bort p&aring; ett s&aring;dant s&auml;tt att de kvarvarande ligger
+i f&ouml;ljd. Antalet j&auml;mf&ouml;relser blir maximalt 80 *
+80 * 3 * 80 = 1,5 miljoner, vilket en dator klarar av ganska snabbt.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">5. Planket</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">H&auml;r g&auml;ller det att
+kunna jobba med r&auml;ta linjens ekvation, det finns flera s&auml;tt
+att l&ouml;sa problemet. Egentligen handlar det om att f&ouml;r
+varje par av barn hitta sk&auml;rningspunkten mellan en linje
+som g&aring;r genom barnen och en linje som g&aring;r genom plankets
+&auml;ndpunkter. (En linje &auml;r o&auml;ndligt l&aring;ng till
+motsats fr&aring;n en str&auml;cka). Om denna sk&auml;rningspunkt
+ligger b&aring;de mellan plankets &auml;ndpunkter och mellan barnen
+s&aring; kan barnen inte se varandra. <BR>
+<IMG SRC="plank.jpg" HEIGHT="137" WIDTH="167" NATURALSIZEFLAG="0"
+ALIGN="BOTTOM"> <BR>
+  </FONT><B><FONT SIZE="-2" FACE="Verdana">Sk&auml;rningspunkten ligger inte mellan 
+  barnen - de ser varandra</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">I det enklaste fallet n&auml;r
+inga av linjerna &auml;r lodr&auml;ta (figuren ovan) kan man hitta
+sk&auml;rningspunkten genom att s&auml;tta Kx+M=kx+m och sedan
+unders&ouml;ka om x ligger mellan x-v&auml;rdena f&ouml;r barnen
+resp. planket. Man kan l&auml;tt g&ouml;ra ett specialfall n&auml;r
+ena linjen &auml;r lodr&auml;t. Man m&aring;ste ocks&aring; kolla
+om linjerna &auml;r parallella. Alternativt kan man representera
+linjerna som vektorer vilket ger en enklare l&ouml;sning.</FONT></P>
+
+<P><B><FONT COLOR="#cc33cc" FACE="Verdana">6. Robot</FONT></B></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Hur m&aring;nga olika svar (kartor)
+finns det? 2^16 = 65536 st. Detta l&aring;ga antal g&ouml;r att
+man med gott mod kan dela upp problemet i tv&aring; delproblem:</FONT></P>
+
+<OL>
+  <LI><FONT SIZE="-1" FACE="Verdana">Generera alla m&ouml;jliga
+  kartor.</FONT>
+  <LI><FONT SIZE="-1" FACE="Verdana">F&ouml;r varje karta: L&aring;t
+  roboten b&ouml;rja g&aring; fr&aring;n varje d&ouml;rr och se
+  var den hamnar. S&aring; fort den hamnar vid fel d&ouml;rr vet
+  man ju att kartan &auml;r fel och man kan d&aring; g&aring; vidare
+  till n&auml;sta karta. Detta g&ouml;r att mycket tid sparas,
+  ofta beh&ouml;ver roboten kanske bara g&aring; en eller tv&aring;
+  vandringar. Om den g&aring;r r&auml;tt fr&aring;n alla 16 d&ouml;rrarna
+  har man hittat sin l&ouml;sning.</FONT>
+</OL>
+
+<P><FONT SIZE="-1" FACE="Verdana">I praktiken g&ouml;rs kartorna
+l&auml;mpligen rekursivt och &quot;innerst&quot;, d.v.s. n&auml;r
+alla 16 rutorna tilldelats en riktning, anropas en funktion som
+k&ouml;r vandringarna. En vandring sker enklast genom att h&aring;lla
+reda p&aring; robotens riktning och position och iterera tills
+den stiger ut. L&auml;gg m&auml;rke till att tack vare de relativa
+riktningarna kan roboten aldrig fastna d&auml;r inne. Inte heller
+kan den komma ut genom samma d&ouml;rr f&ouml;r olika ing&aring;ngsd&ouml;rrar.</FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana">Ett tips: D&ouml;rrarnas numrering
+kan tyckas vara lite sv&aring;r att koda. Det enklaste s&auml;ttet
+&auml;r att anv&auml;nda konstanta arrayer som lagrar startposition
+(x och y) samt startriktning f&ouml;r var och en av de 16 d&ouml;rrarna.
+Om riktningen anges med 0 (&ouml;ster), 1 (norr), 2 (v&auml;ster)
+eller 3 (s&ouml;der) kan man allts&aring; i C skriva</FONT></P>
+
+<P><TT><FONT SIZE="-1" FACE="Verdana">int rs[16] = {0,1,2,3,3,3,3,3,3,2,1,0,0,0,0,0};&nbsp;&nbsp;//
+Start-raden</FONT></TT><FONT SIZE="-1" FACE="Verdana"> <BR>
+<TT>int cs[16] = {0,0,0,0,0,1,2,3,3,3,3,3,3,2,1,0};&nbsp;&nbsp;//
+Start-kolumnen</TT> <BR>
+<TT>int ds[16] = {0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3};&nbsp;&nbsp;//
+Start-riktningen</TT></FONT></P>
+
+<P><FONT SIZE="-1" FACE="Verdana"><HR ALIGN=LEFT></FONT><p></P>
+
+<P><FONT FACE="Verdana,Helvetica">Vill du l&auml;sa mer om algoritmer:
+<A HREF="http://riksvasa.haninge.kth.se/ioi">Programmeringsolympiadens
+tr&auml;nings-sajt</A></FONT><FONT SIZE="-1" FACE="Verdana"> <BR>
+</FONT><FONT FACE="Verdana,Helvetica">&Auml;n s&aring; l&auml;nge
+inneh&aring;ller den mest s&aring;dant som kan vara intressant
+inf&ouml;r de internationella t&auml;vlingarna, men vissa saker
+kan vara nyttiga &auml;ven i svenska finalen.</FONT></P>
+
+<P><FONT FACE="Verdana,Helvetica">Om du har fr&aring;gor eller
+kommentarer om uppgifterna eller n&aring;got annat: Skriv till</FONT><FONT
+ SIZE="-1" FACE="Verdana"> <BR>
+</FONT><FONT FACE="Verdana,Helvetica">P&auml;r S&ouml;derhjelm,&nbsp;&nbsp;<A
+HREF="mailto:paso3493@student.uu.se">paso3493@student.uu.se&nbsp;</A>&nbsp;&nbsp;eller</FONT><FONT
+ SIZE="-1" FACE="Verdana"> <BR>
+</FONT><FONT FACE="Verdana,Helvetica">H&aring;kan Str&ouml;mberg,&nbsp;&nbsp;&nbsp;<A
+HREF="mailto:hakan@haninge.kth.se">hakan@haninge.kth.se</A></FONT><FONT
+ SIZE="-1" FACE="Verdana"> <BR>
+&nbsp;</FONT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Kvalet 2002</title>
+</head>
+<body>
+<big><b><font face="Helvetica, Arial, sans-serif"><big>Kommentarer och l&ouml;sningar
+till uppgifterna i </big><big><br>
+</big><big>Kvalet till Programmeringsolympiaden 2002.</big><br>
+<br>
+</font></b><font face="Helvetica, Arial, sans-serif"><small>Kom ih&aring;g
+att alla s&auml;tt att l&ouml;sa en uppgift &auml;r r&auml;tt utom de som
+&auml;r fel.</small><small><br>
+</small><small>L&ouml;sningarna &auml;r skrivna i C/C++ och f&ouml;ljer t&auml;vlingsstandarden
+p&aring; s&aring; s&auml;tt att de &auml;r helt okommenterade och obegripliga.
+Om n&aring;gon VB/Pascalprogrammerare vill dela med sig av sina l&ouml;sningar
+mottages dessa tacksamt.</small></font><b><font face="Helvetica, Arial, sans-serif"><br>
+<br>
+</font></b><a href="kval02problem.pdf"><small><font face="Helvetica, Arial, sans-serif">
+Uppgifterna (PDF)</font></small></a>
+<b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b><a href="kval02svar.pdf"><small><font face="Helvetica, Arial, sans-serif">
+Testdata (PDF)</font></small></a>
+<b><font face="Helvetica, Arial, sans-serif"><br>
+<br>
+Uppgift 1 - Euro</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Eftersom avgiften utg&aring;r
+om man v&auml;xlar in och ut p&aring; samma bank, blir det lite kr&aring;ngligt
+att titta p&aring; v&auml;xlingarna separat. Det enklaste &auml;r ist&auml;llet
+att g&ouml;ra en dubbel-loop: f&ouml;r varje kombination av ut- och inv&auml;xlingsbank
+(max 5*5 st) ber&auml;knas den totala kostnaden f&ouml;r resan. Den minimala
+kostnaden och de banker som h&ouml;r ihop med denna kostnad sparas under
+tiden.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg1.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg1.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 2 - Primfaktorer</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Att g&aring; igenom serien
+kan g&ouml;ras antingen i en loop eller rekursivt som i l&ouml;sningen nedan.
+F&ouml;r att hitta primfaktorerna till ett tal N beh&ouml;vs ingen smart
+algoritm eftersom talen &auml;r s&aring; sm&aring;. Exempelvis kan man testa
+alla tal K med b&ouml;rjan fr&aring;n 2 och kolla om N &auml;r j&auml;mnt
+delbart med K. I s&aring; fall &auml;r K en primfaktor eftersom det inte
+fanns n&aring;got l&auml;gre tal som N var delbart med. N&auml;r man hittat
+en primfaktor K s&aring; dividerar man N med K och forts&auml;tter leta d&auml;r
+man slutade. Man m&aring;ste naturligtvis t&auml;nka p&aring; att samma faktor
+kan f&ouml;rekomma flera g&aring;nger.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg2.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg2.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 3 - Kedjebrev</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">H&aring;ll reda p&aring;
+antal personer c som har f&aring;tt brev i senaste omg&aring;ngen, fr&aring;n
+b&ouml;rjan &auml;r c = m. I varje omg&aring;ng kan man d&aring; f&ouml;rv&auml;nta
+sig att den person som st&aring;r p&aring; tur att f&aring; pengar ska f&aring;
+c kronor, d&auml;rf&ouml;r blir antalet avhoppare i den omg&aring;ngen skillnaden
+mellan c och det verkliga beloppet. Nu vet vi att antalet personer som fortfarande
+&auml;r med &auml;r lika med det verkliga beloppet och genom att multiplicera
+med m s&aring; f&aring;r vi c f&ouml;r n&auml;sta omg&aring;ng.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg3.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg3.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 4 - Tomter
+till husen</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">H&auml;r finns tv&aring;
+(minst) olika metoder. Den mest effektiva &auml;r att f&ouml;r varje l&auml;ngd
+p&aring; tomten hitta den minimala och maximala bredden och sedan l&aring;ta
+bredden anta alla v&auml;rden d&auml;remellan och ber&auml;kna arean. Den
+minimala bredden erh&aring;lls genom att trycka ihop modulerna s&aring; mycket
+som m&ouml;jligt, den maximala genom att dra en l&aring;ng "utstickare".
+Det &auml;r l&auml;tt att kontrollera p&aring; papper att det inte finns
+n&aring;gon "glesare" placering av modulerna eftersom de m&aring;ste ha en
+kant gemensam. En s&auml;mre l&ouml;sning (som &auml;nd&aring; fungerar eftersom
+det maximala antalet moduler &auml;r s&aring; litet) &auml;r att generera
+alla m&ouml;jliga husformer med "brute force". Detta kan g&ouml;ras rekursivt.
+Man b&ouml;rjar med tv&aring; moduler och f&ouml;rs&ouml;ker sedan ut&ouml;ka
+med en modul i alla t&auml;nkbara riktningar. N&auml;r man har satt dit denna
+f&ouml;rs&ouml;ker man s&auml;tta n&auml;sta i alla m&ouml;jliga riktningar.
+Hela tiden h&aring;ller man reda p&aring; maximalt/minimalt x och y s&aring;
+att man n&auml;r den sista modulen s&auml;tts p&aring; plats l&auml;tt kan
+r&auml;kna ut arean.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">F&ouml;r att undvika dubletter
+i b&aring;da dessa metoder &auml;r det enklast att ha en lista &ouml;ver
+areor (t.ex. 1 till 300 s&aring; f&aring;r man med alla med god marginal).
+Fr&aring;n b&ouml;rjan &auml;r ingen av dessa areor markerad men s&aring;
+fort man hittar en husform markerar man dess area som m&ouml;jlig i listan.
+Efter&aring;t g&aring;r man igenom listan och r&auml;knar hur m&aring;nga
+areor som har markerats.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg4.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg4.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 5 - Priser
+med mynt</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">&Auml;ven h&auml;r finns
+flera olika m&ouml;jligheter. F&ouml;rst g&auml;ller det att inse att talen
+inte kan ha mer &auml;n 3 siffror (eftersom 4*12&lt;1000/20). D&auml;rf&ouml;r
+finns det h&ouml;gst 3*12 mynt totalt. Ett enkelt s&auml;tt &auml;r d&aring;
+att testa alla m&ouml;jliga kombinationer av antal femtio&ouml;ringar/antal
+enkronor/antal extramynt (h&ouml;gst 19*37*37 stycken, j&auml;mnt antal femtio&ouml;ringar)
+med hj&auml;lp av en trippel-loop. F&ouml;r varje kombination ber&auml;knar
+man myntens v&auml;rde och d&auml;refter hur m&aring;nga mynt som skulle
+kr&auml;vas f&ouml;r att skriva detta belopp. Om det antalet r&aring;kar
+&ouml;verensst&auml;mma med det totala antalet mynt i kombinationen markerar
+man beloppet som m&ouml;jligt p&aring; samma s&auml;tt som i uppgift 4. Efter&aring;t
+&auml;r det bara att r&auml;kna antal markerade belopp.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg5.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg5.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 6 - Avst&aring;nd
+mellan tal</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Detta &auml;r en typisk
+backtracking-uppgift (rekursiv). Man b&ouml;rjar att skjuta den f&ouml;rsta
+pilen d&auml;r det finns ett r. Man markerar den ringen som upptagen, t.ex.
+genom att spara numret p&aring; pilen d&auml;r ist&auml;llet f&ouml;r r:et.
+Sedan f&ouml;rs&ouml;ker man skjuta n&auml;sta pil p&aring; de &aring;terst&aring;ende
+r:en i tur och ordning. N&auml;r man hittat en ring som det &auml;r till&aring;tet
+att skjuta p&aring; markerar man denna och forts&auml;tter skjuta n&auml;sta
+pil genom att l&aring;ta funktionen anropa sig sj&auml;lv. Om man inte hittar
+n&aring;got godk&auml;nt r, &auml;r det bara att l&aring;ta funktionen avslutas
+f&ouml;r d&aring; forts&auml;tter man att leta ringar f&ouml;r den f&ouml;reg&aring;ende
+pilen. Man m&aring;ste d&aring; naturligtvis g&ouml;ra den aktuella ringen
+ledig genom att s&auml;tta den till r igen. N&auml;r man har lyckats skjuta
+lika m&aring;nga pilar som det finns ringar har man hittat en l&ouml;sning,
+d&aring; &auml;r det bara att skriva ut ordningen och avsluta. F&ouml;r att
+se till att avst&aring;ndet hela tiden v&auml;xer, kan man ha en extra parameter
+till den rekursiva funktionen som beskriver det minsta till&aring;tna avst&aring;ndet
+till n&auml;sta ring. Vid rekursionen s&auml;tter man denna parameter till
+avst&aring;ndet mellan de senaste tv&aring; ringarna. </font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><br>
+</body>
+</html>

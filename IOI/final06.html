@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Kvalet 2005</title>
+</head>
+<body>
+<big><b><font face="Helvetica, Arial, sans-serif"><big>L&ouml;sningar
+till uppgifterna i </big><big><br>
+</big><big>Finalen i Programmeringsolympiaden 2006.</big><br>
+<br>
+</font></b><font face="Helvetica, Arial, sans-serif"><small>L&ouml;sningarna
+&auml;r skrivna i C och sparsamt kommenterade. Tillsammans med
+kommentarerna nedan hoppas jag &auml;nd&aring; att de kan vara till
+hj&auml;lp.<br>
+</small></font><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><big><font face="Helvetica, Arial, sans-serif"><small>Kom
+ih&aring;g
+att alla s&auml;tt att l&ouml;sa en uppgift &auml;r r&auml;tt utom de
+som
+&auml;r fel!<br>
+Skriv g&auml;rna om ni har fr&aring;gor, kommentarer, tips om andra
+l&ouml;sningar m.m. Kolla ocks&aring; g&auml;rna in <a href="../../ioi">tr&auml;ningssajten</a>.<br>
+P&auml;r S&ouml;derhjelm, <a href="mailto:par.soderhjelm@teokem.lu.se">par.soderhjelm@teokem.lu.se</a><br>
+</small></font></big>
+<hr style="width: 100%; height: 2px;"><big><a href="../finaluppg06.pdf"><small><font
+ face="Helvetica, Arial, sans-serif">Uppgifterna
+(PDF)</font></small>&nbsp; </a><small><font
+ face="Helvetica, Arial, sans-serif"><br>
+<a href="../finaltestdata06.zip">Testdata (ZIP)</a><br>
+</font></small></big>
+<hr style="width: 100%; height: 2px;"><big><small><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></small><b><font face="Helvetica, Arial, sans-serif">Uppgift 1 -
+Lameller</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Den f&ouml;rsta
+uppgiften v&aring;llade en hel del problem, det g&auml;ller att ha
+tungan r&auml;tt i mun s&aring; att man f&aring;r med alla
+m&ouml;jligheter. Det enklaste &auml;r att l&auml;gga ut den
+f&ouml;rsta lamellen p&aring; en fix position, t.ex. med den
+v&auml;nstraste rutan vid koordinat 0. Sedan testar man alla
+m&ouml;jliga placeringar av den andra lamellen. Den kan starta s&aring;
+l&aring;ngt till v&auml;nster som position -N2 men den kan ocks&aring;
+starta s&aring; l&aring;ngt till h&ouml;ger som +N1 utan att det blir
+n&aring;got mellanrum. F&ouml;r varje placering av den andra lamellen
+g&aring;r man sedan igenom alla koordinater d&auml;r &aring;tminstone
+n&aring;gon av lamellerna finns och r&auml;knar hur m&aring;nga av
+dessa som har genomg&aring;ende h&aring;l. Man h&aring;ller
+f&ouml;rst&aring;s reda p&aring; det minsta antalet h&aring;l man
+&aring;stadkommit med n&aring;gon placering hittills.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg1.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg1.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 2 -
+Summan blir 1</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">F&aring;r v&auml;l
+r&auml;knas som en standarduppgift. Eftersom de givna siffrorna endast
+kan bilda 9! = 9*8*7*6*5*4*3*2*1 = 362880 olika uttryck (eller
+&auml;nnu f&auml;rre om man tar h&auml;nsyn till att termernas ordning
+inte spelar n&aring;gon roll) s&aring; &auml;r det bara att g&aring;
+igenom alla och testa om v&auml;rdet blir ett och i s&aring; fall
+skriva ut svaret. De 9! permutationerna kan genereras med en enkel
+rekursiv funktion eller med hj&auml;lp av en f&auml;rdig funktion i
+Standard Template Library (STL) om man anv&auml;nder C++, se nedan
+f&ouml;r b&aring;da l&ouml;sningarna. F&ouml;r att testa om uttrycket
+&auml;r lika med ett utan att beh&ouml;va bekymra sig om
+flyttalsprecision kan man anv&auml;nda ett klassiskt trick fr&aring;n
+skolmatematiken, multiplicera b&aring;da sidor med en gemensam
+n&auml;mnare, inte n&ouml;dv&auml;ndigtvis den minsta utan f&ouml;r
+enkelhets skull produkten av de tre n&auml;mnarna.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg2.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag
+(rekursivt)</font></a><br>
+<font><a href="uppg2.cpp"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag
+(STL)</font></a></font><br>
+<br>
+<font face="Helvetica, Arial, sans-serif"></font><big><b><font
+ face="Helvetica, Arial, sans-serif">Uppgift 3 - F&ouml;rvirrande SMS</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Denna uppgift var det
+ocks&aring; m&aring;nga som klarade. &Aring;terigen r&auml;cker det med
+backtracking. Man h&aring;ller reda p&aring; var man &auml;r i
+sifferf&ouml;ljden och var man &auml;r i det ordet man h&aring;ller
+p&aring; att bilda. N&auml;r man kommer till slutet av
+sifferf&ouml;ljden skrivs ordet ut och man hoppar tillbaka
+(backtrackar) f&ouml;r att se om det finns n&aring;gra alternativa
+tolkningar. N&auml;r vi &auml;r vid en given siffra, kan vi alltid
+l&aring;ta den st&aring; f&ouml;r den f&ouml;rsta bokstaven p&aring;
+knappen, d&aring; hoppar vi helt enkelt ett steg fram&aring;t. Om vi
+ser att n&auml;sta siffra &auml;r densamma som den vi just nu tittar
+p&aring;, s&aring; har vi ytterligare ett alternativ, n&auml;mligen att
+l&aring;ta de siffrorna ihop st&aring; f&ouml;r den andra bokstaven
+p&aring; knappen och hoppa tv&aring; steg fram&aring;t. Och skulle de
+tv&aring; f&ouml;ljande siffrorna vara desamma som den aktuella,
+s&aring; har vi ett tredje alternativ, n&auml;mligen att l&aring;ta de
+tre siffrorna tillsammans st&aring; f&ouml;r den tredje bokstaven
+p&aring; knappen. Men fler &auml;n tre alternativ kan aldrig finnas,
+s&aring; det beh&ouml;vs inte ens n&aring;gon loop.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg3.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg3.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 4 -
+Ordfl&auml;tan</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+H&auml;r b&ouml;rjade m&aring;nga t&auml;vlande f&aring; problem
+eftersom det kr&auml;vdes en ganska effektiv algoritm f&ouml;r att
+klara de sv&aring;raste testfallen. Den naiva l&ouml;sningen &auml;r
+att ha en rekursiv funktion som fyller i ett v&aring;gr&auml;tt ord i
+taget och sedan kollar man p&aring; slutet om det st&auml;mmer
+lodr&auml;tt ocks&aring;. Problemet &auml;r att det finns ca 17
+miljarder s&auml;tt att v&auml;lja ut fyra av 800 ord. Visserligen
+&auml;r datorer snabba, men det &auml;r &auml;nd&aring; lite f&ouml;r
+mycket, s&auml;rskilt om man f&ouml;r varje fall ska kolla om de
+lodr&auml;ta orden &auml;r godk&auml;nda och inte f&ouml;rekommer flera
+g&aring;nger. S&aring; detta &auml;r ett typiskt exempel d&auml;r man
+beh&ouml;ver anv&auml;nda s.k. pruning, "besk&auml;rning" av
+s&ouml;ktr&auml;det, d.v.s. att f&ouml;rs&ouml;ka se s&aring; tidigt
+som m&ouml;jligt n&auml;r man inte kan n&aring; en l&ouml;sning med de
+val man har gjort och d&auml;rf&ouml;r b&ouml;r backtracka direkt (se
+&auml;ven <a href="http://www.syd.kth.se/ioi/backtracking.htm">tr&auml;ningssajten</a>).
+Det finns m&aring;nga olika s&aring;dana optimeringar att g&ouml;ra i
+denna uppgift, men man beh&ouml;ver inte alls g&ouml;ra alla f&ouml;r
+att klara tidsgr&auml;nsen, huvudsaken &auml;r att man t&auml;nker
+p&aring; n&aring;gonting. Det kan t.ex. vara att man fyller i orden
+v&auml;xelvis v&aring;gr&auml;tt och lodr&auml;tt s&aring; att man
+f&ouml;r varje ordval f&aring;r f&auml;rre m&ouml;jligheter eftersom
+det begr&auml;nsas av de tidigare ifyllda orden. Lite kn&ouml;ligt att
+skriva tycker jag, s&aring; mitt l&ouml;sningsf&ouml;rslag bygger
+ist&auml;llet p&aring; en optimering av den naiva algoritmen. N&auml;r
+man s&auml;tter dit det andra v&aring;gr&auml;tta ordet s&aring; kan
+man ju passa p&aring; att kolla, f&ouml;r varje kolumn, om de
+p&aring;b&ouml;rjade lodr&auml;tta orden kan bli riktiga ord, d.v.s. om
+de kombinationerna av tv&aring; bokst&auml;ver f&ouml;rekommer i
+b&ouml;rjan av ord, f&ouml;r annars &auml;r det ju ingen id&eacute; att
+forts&auml;tta. Och likadant n&auml;r man fyller i det tredje
+v&aring;gr&auml;tta ordet. F&ouml;r att g&ouml;ra den
+"prelimin&auml;ra" kontrollen p&aring; ett effektivt s&auml;tt kan man
+anv&auml;nda tabeller d&auml;r man fr&aring;n b&ouml;rjan har sparat om
+en bokstavskombination &auml;r b&ouml;rjan p&aring; ett ord eller inte.
+Detta kan g&ouml;ras &auml;ven f&ouml;r fyrbokstavskombinationer, det
+blir ju bara 26^4=456976 m&ouml;jligheter, och vips s&aring; &auml;r
+ocks&aring; den "slutgiltiga" kontrollen (n&auml;r alla fyra
+v&aring;gr&auml;tta orden &auml;r ifyllda) blixtsnabb.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font><a href="uppg4.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a></font><a
+ href="uppg4.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 5 -
+Skid&aring;kning</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><br>
+<font face="Helvetica, Arial, sans-serif">Detta &auml;r ett typexempel
+p&aring; en uppgift som l&auml;mpligtvis l&ouml;ses med dynamisk
+programmering. Problemet har till och med ett eget namn,
+knapsack-problemet, och har varit f&ouml;rem&aring;l f&ouml;r mycket
+datavetenskaplig forskning. Normalt brukar det formuleras som hur man
+ska packa en ryggs&auml;ck (knapsack) med en viss storlek p&aring; ett
+s&aring;dant s&auml;tt att den totala nyttan maximeras. Man v&auml;ljer
+bland ett antal objekt som vart och ett tar en viss plats och ger en
+viss nytta. I en version kan man ta flera exemplar av samma objekt, i
+en annan version h&ouml;gst ett. I den version som diskuteras p&aring; <a
+ href="http://www.syd.kth.se/ioi/knapsack.htm">tr&auml;ningssajten</a>
+&auml;r nyttan lika med storleken, allts&aring; ett specialfall. I
+skid&aring;kningsuppgiften &auml;r f&ouml;rst&aring;s objekten
+nedfarter, deras "storlek" &auml;r den sammanlagda lift- och
+&aring;ktiden och deras nytta &auml;r &aring;ktiden. Ryggs&auml;ckens
+storlek motsvaras av den maximala tiden M. Uppenbarligen kan man ta
+flera exemplar av samma objekt, d.v.s. &aring;ka samma nerfart flera
+g&aring;nger.<br>
+<br>
+</font><font face="Helvetica, Arial, sans-serif">I det generella fallet
+&auml;r problemet NP-komplett, d.v.s. troligen ol&ouml;sbart p&aring;
+polynomisk tid. Om storlekarna &auml;r heltal i ett n&aring;gorlunda
+litet intervall s&aring; finns dock effektiva l&ouml;sningar med
+dynamisk programmering. Det g&auml;ller att inse att n&auml;r man har
+f&ouml;rbrukat en viss tid och uppn&aring;tt en viss &aring;ktid,
+s&aring; spelar det ingen roll f&ouml;r forts&auml;ttningen precis
+vilka backar man har tagit innan. S&aring; om man i en rekursiv
+l&ouml;sning hela tiden kollar om man redan har hittat en l&ouml;sning
+med exakt samma f&ouml;rbrukad tid men med l&auml;ngre &aring;ktid,
+s&aring; kan man ge upp direkt, det kommer aldrig att "ta ifatt" det
+man ligger efter. Detta &auml;r allts&aring; ocks&aring; en form av
+besk&auml;rning av s&ouml;ktr&auml;det, men till skillnad fr&aring;n
+f&ouml;rra uppgiften &auml;r detta en mycket kraftig s&aring;dan, man
+inser l&auml;tt att det totala antalet st&auml;llningar man kommer till
+aldrig &auml;r fler &auml;n t^2 (d&auml;r t &auml;r maxtiden) och i
+praktiken mycket f&auml;rre. Ofta &auml;r det l&auml;ttare att bygga
+upp de b&auml;sta dell&ouml;sningarna svarande mot succesivt
+&ouml;kande f&ouml;rbrukad tid i en tabell s&aring; att man slipper
+rekursera &ouml;verhuvudtaget, mer om det p&aring; </font><font
+ face="Helvetica, Arial, sans-serif"><a
+ href="http://www.syd.kth.se/ioi/knapsack.htm">tr&auml;ningssajten</a>.</font><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg5.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a><a
+ href="uppg5.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 6 -
+Rinnande vatten</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><span style="font-family: helvetica,arial,sans-serif;">Ingen
+lyckades l&ouml;sa detta problem korrekt, men m&aring;nga var p&aring;
+r&auml;tt v&auml;g. Det &auml;r l&auml;tt att bli lurad att tro att man
+kan r&auml;kna ut "fyllningstiderna" i en snygg f&ouml;ljd
+uppifr&aring;n och ner (likt Pascals triangel) eftersom ett glas
+fyllningstid vid f&ouml;rsta anblicken ser ut att bara bero p&aring;
+fyllningstider och fyllningshastigheter i raden ovanf&ouml;r. Men det
+finns ett problem: medan ett glas h&aring;ller p&aring; att fyllas en
+bit ner i pyramiden s&aring; kan pl&ouml;tsligt ett glas flera rader
+upp bli fullt och &auml;ndra alla fyllnadshastigheter i mellanliggande
+lager. Men l&auml;get &auml;r inte alls hoppl&ouml;st. Man kan
+n&auml;mligen helt enkelt simulera f&ouml;rloppet i tidsordning och
+h&aring;lla reda p&aring; hur mycket som f&ouml;r tillf&auml;llet
+rinner fr&aring;n varje glas. Det &auml;r d&aring; l&auml;tt att
+r&auml;kna ut vilket glas som h&auml;rn&auml;st kommer att fyllas och
+vid vilken tidpunkt detta sker. D&aring; hoppar man fram till denna
+tidpunkt och uppdaterar alla fl&ouml;den. P&aring; detta s&auml;tt
+forts&auml;tter man tills det intressanta glaset &auml;r fullt. Det som
+m&aring;nga gjorde och som endast gav delpo&auml;ng var att
+ist&auml;llet simulera med ett konstant tidssteg p&aring; typ 0.001
+sekunder. Dels s&aring; f&ouml;rlorar man i exekveringstid, eftersom
+man behandlar en massa tidpunkter d&auml;r det inte h&auml;nder ett
+skvatt. Dels s&aring; f&ouml;rlorar man i noggrannhet eftersom glasen
+inte n&ouml;dv&auml;ndigtvis fylls just vid de simulerade tidpunkterna.
+Felen som uppst&aring;r samlar p&aring; sikt ihop sig och kan bli
+ganska stora.<br>
+</span><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg6.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<br>
+<big><b><font face="Helvetica, Arial, sans-serif">Uppgift 7 -
+Avst&aring;ndstabell</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><span style="font-family: helvetica,arial,sans-serif;">Det
+h&auml;r problemet &auml;r som <a
+ href="http://www.syd.kth.se/ioi/shortest.htm">Kortaste v&auml;gen</a>
+fast tv&auml;rtom, allts&aring; man ska h&auml;r best&auml;mma grafen
+n&auml;r man vet kortaste v&auml;gen. Teknikerna man kan anv&auml;nda
+p&aring;minner ocks&aring; om l&ouml;sningen av Kortaste v&auml;gen.
+Man bygger succesivt upp grafen genom att addera fler och fler
+b&aring;gar (v&auml;gar mellan st&auml;derna).&nbsp; Man kollar i
+avst&aring;ndstabellen efter det kortaste avst&aring;ndet som &auml;nnu
+inte har f&aring;tt sin f&ouml;rklaring i grafen. Detta m&aring;ste bli
+en ny direktv&auml;g, f&ouml;r om det &auml;r en sammansatt v&auml;g
+s&aring; m&aring;ste den involvera minst en ny v&auml;g (eftersom den
+inte gick att f&ouml;rklara). Denna nya v&auml;g m&aring;ste vara
+kortare &auml;n den aktuella, vilket &auml;r en mots&auml;gelse
+eftersom man valde det kortaste avst&aring;ndet.<br>
+</span><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg7.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a><a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"></font></a><br>
+</body>
+</html>

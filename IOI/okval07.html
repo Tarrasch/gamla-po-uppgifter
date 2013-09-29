@@ -1,0 +1,378 @@
+<html>
+<head>
+<title>Programmeringsolympiaden 2007: Onlinekvalets uppgifter</title>
+<link rel="stylesheet" href="http://kattis.csc.kth.se/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://kattis.csc.kth.se/css/problem.css" type="text/css" />
+</head>
+<body>
+<div id='container' style="height:auto;">
+<h1>Programmeringsolympiaden 2007: Onlinekvalet</h1>
+
+<p><b>OBS! T&auml;vlingstiden &auml;r f&ouml;rl&auml;ngd till 25 februari</b></p>
+
+<p>T&auml;vlingen best&aring;r av sju upgifter som alla finns i detta dokument. Snabbl&auml;nkar finns h&auml;r.
+<p align="center">
+<a href="#uppg1">Uppgift 1 - Soldaterna</a><br>
+<a href="#uppg2">Uppgift 2 - K&ouml;lappar</a><br>
+<a href="#uppg3">Uppgift 3 - Begr&auml;nsningsarea</a><br>
+<a href="#uppg4">Uppgift 4 - M&aring;ngtydig Morse</a><br>
+<a href="#uppg5">Uppgift 5 - Tennisklubben</a><br>
+<a href="#uppg6">Uppgift 6 - Kontaktf&ouml;rmedlingen</a><br>
+<a href="#uppg7">Uppgift 7 - Kuben</a><br>
+</p>
+<p>L&ouml;sningarna skickas in via Kattis <a href="http://kattis.csc.kth.se/judge_upload">Submit-sida.</a>Problemets ID st&aring;r i b&ouml;rjan av varje problembeskrivning. Observera att en l&ouml;sning blir accepterad (Accepted) av Kattis bara genom att l&ouml;sa exemplet som st&aring;r i uppgiften. Detta &auml;r allts&aring; ingen garanti f&ouml;r att l&ouml;sningen ger n&aring;gon po&auml;ng vid r&auml;ttningen, som genomf&ouml;rs efter t&auml;vlingens slut.</p>
+
+<p>F&ouml;r samtliga uppgifter g&auml;ller f&ouml;ljande:
+<ul>
+<li>Maximal exekveringstid: 10 sekunder.</li> <li>Maximal minnesanv&auml;ndning: 32 Mb</li></ul></p>
+<p>OBS! &Auml;ven om bara en rad skrivs ut s&aring; m&aring;ste den alltid avslutas med radbrytning.</p>
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg1"><h1>Uppgift 1 - Soldaterna</h1></a>
+<p><b>Problem id: soldat</b></p>
+<p><img class="figure" src='soldater.jpg'></p>
+<p>
+Ett antal soldater st&aring;r p&aring; ett led alla v&auml;nda mot furiren, n&auml;r han ger ordern "h&ouml;ger om". Eftersom m&aring;nga av soldaterna har sv&aring;rt att skilja p&aring; h&ouml;ger och v&auml;nster blir det mest slumpen som avg&ouml;r &aring;t vilket h&aring;ll de v&auml;nder sig. Ett exempel visas p&aring; f&ouml;rsta raden i figuren ovan. De soldater som p&aring; s&aring; s&auml;tt hamnar "&ouml;ga mot &ouml;ga" med en granne f&ouml;rst&aring;r b&aring;da tv&aring; att de v&auml;nt sig &aring;t fel h&aring;ll och g&ouml;r d&auml;rf&ouml;r helt om (180 grader), f&ouml;r att kanske hamna &ouml;ga mot &ouml;ga med den andra grannen. Denna procedur forts&auml;tter (steg 1 och 2 i figuren) och upph&ouml;r d&aring; inga soldater l&auml;ngre &auml;r v&auml;nda mot varandra (steg 3).
+
+</p>
+<h2>Indata</h2>
+<p>
+Den f&ouml;rsta raden best&aring;r av heltalet <em>n</em>, d&auml;r 2 &le; <em>n</em> &le; 100, som anger antalet soldater. Den andra raden best&aring;r av en str&auml;ng med <em>n</em> tecken, d&aring;r varje tecken &auml;r antingen V eller H. Dessa anger &aring;t vilket h&aring;ll soldatens n&auml;sa pekar i utg&aring;ngsl&auml;get.
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut hur m&aring;nga steg som beh&ouml;vs fr&aring;n utg&aring;ngsl&auml;get tills lugnet infinner sig.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+6
+VHVVHV
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+3
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg2"><h1>Uppgift 2 - K&ouml;lappar</h1></a>
+<p><b>Problem id: kolappar</b></p>
+<p>
+Du r&aring;kar g&aring; till banken i rusningstid. Ett vanligt k&ouml;lapps-system anv&auml;nds, men <em>n</em> kunder har l&auml;gre k&ouml;nummer &auml;n du. Dock &auml;r <em>m</em> kassor &ouml;ppna. Skriv ett program som, givet hur l&aring;ng tid varje kunds &auml;rende tar, ber&auml;knar hur l&aring;ng tid det tar innan det &auml;r din tur.</p>
+
+<p>Varje kund har ett bank&auml;rende som tar ett helt antal minuter. S&aring; fort det finns en ledig kassa kallas n&auml;sta person i k&ouml;n fram. Kundbytet tar inget tid i anspr&aring;k. F&ouml;r enkelhets skull f&ouml;ruts&auml;tter vi att i det &ouml;gonblicket du tar din k&ouml;lapp, l&aring;t oss kalla det tiden 0, s&aring; &auml;r alla kassorna lediga och <em>m</em> kunder kallas allts&aring; fram omedelbart (vilket kan inkludera dig om <em>n</em> &lt; <em>m</em>).</p>
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r tv&aring; heltal: antalet personer f&ouml;re dig i k&ouml;n (1 &le; <em>n</em> &le; 100) och antalet &ouml;ppna kassor  (1 &le; <em>m</em> &le; 10). D&auml;refter f&ouml;ljer en rad med <em>n</em> heltal i intervallet 1..20, antalet minuter f&ouml;r varje kunds &auml;rende. Det f&ouml;rsta talet anger tiden f&ouml;r den f&ouml;rsta kunden i k&ouml;n, det andra f&ouml;r den n&auml;st f&ouml;rsta kunden o.s.v.</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut efter hur m&aring;nga minuter du kallas fram och f&aring;r p&aring;b&ouml;rja ditt &auml;rende.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+7 3                 
+2 5 6 2 4 5 3
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+8
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg3"><h1>Uppgift 3 - Begr&auml;nsningsarea</h1></a>
+<p><b>Problem id: area</b></p>
+<p>
+<img class="figure" src='solid.gif'>
+</p>
+<p>
+Betrakta den tredimensionalla figuren ovan. Den &auml;r ihopsatt av ett antal 1x1x1 kuber i ett 3d-rutn&auml;t. Om vi begr&auml;nsar oss till figurer som
+har staplar f&auml;sta i "marken", kan figuren p&aring; bilden beskrivas genom att ange h&ouml;jden f&ouml;r varje stapel:
+
+<p><table>
+<tr><td>4<td>2<td>3<td>1
+<tr><td>2<td>1<td>0<td>1
+<tr><td>0<td>0<td>0<td>1
+</table></p>
+
+Figurens volym &auml;r f&ouml;rst&aring;s enkel att ber&auml;kna, men h&auml;r &auml;r vi intresserade av dess begr&auml;nsningsarea,
+d.v.s. antalet 1x1 kvadrater som &auml;r synliga utifr&aring;n (inklusive underifr&aring;n). Skriv ett program som ber&auml;knar detta, givet
+beskrivningen av en figur.
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r tv&aring; heltal <em>r</em> och <em>k</em>, d&auml;r 1 &le; <em>r</em>,<em>k</em> &le; 50. Sedan f&ouml;ljer <em>r</em> rader med <em>k</em> heltal p&aring; varje rad: h&ouml;jden (&le; 50) f&ouml;r varje stapel.
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut ett heltal: figurens begr&auml;nsningsarea.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+3 4
+4 2 3 1
+2 1 0 1
+0 0 0 1
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+54
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg4"><h1>Uppgift 4 - M&aring;ngtydig Morse</h1></a>
+<p><b>Problem id: morse</b></p>
+<p>
+<img class="figure" src='morse.png'>
+</p>
+<p>
+Tabellen ovan visar Morsealfabetet. Punkter och
+streck anv&auml;nds f&ouml;r att beteckna korta respektive l&aring;nga
+signaler. Normalt l&auml;mnas morsemeddelanden med ett
+uppeh&aring;ll mellan varje bokstav, till exempel 
+<span style="font-family:monospace">--. . -</span> som st&aring;r f&ouml;r ordet GET. Men av en obest&auml;md anledning kommer det just nu in
+meddelanden i en oavbruten f&ouml;ljd av l&aring;nga och korta
+signaler, allts&aring; utan uppeh&aring;ll mellan bokst&auml;verna. GET-signalen blir d&aring; 
+<span style="font-family:monospace">--..-</span> och kan d&auml;rf&ouml;r st&aring; f&ouml;r m&aring;nga andra bokstavssekvenser, t.ex. MU. 
+Skriv ett program som tar emot en f&ouml;ljd av streck och punkter,
+och som sedan skriver ut varje m&ouml;jlig kombination av
+bokst&auml;ver som svarar mot den givna indatastr&auml;ngen
+
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r signalstr&auml;ngen, som best&aring;r av h&ouml;gst 15 tecken. D&auml;refter f&ouml;ljer 26 rader som beskriver Morse-alfabetet. Denna information &auml;r samma i alla testfall och motsvarar precis tabellen ovan. Den f&ouml;rsta av dessa rader ger signalen f&ouml;r A, den andra f&ouml;r B o.s.v.
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut alla m&ouml;jliga bokstavssekvenser som svarar mot den givna indatastr&auml;ngen. Sekvenserna ska skrivas ut i alfabetisk ordning med en per rad. Endast versalerna A-Z f&aring;r f&ouml;rekomma.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+--..-
+.-
+-...
+-.-.
+-..
+.
+..-.
+--.
+....
+..
+.---
+-.-
+.-..
+--
+-.
+---
+.--.
+--.-
+.-.
+...
+-
+..-
+...-
+.--
+-..-
+-.--
+--..
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+GA
+GET
+MEA
+MEET
+MIT
+MU
+TDT
+TNA
+TNET
+TTEA
+TTEET
+TTIT
+TTU
+TX
+ZT
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg5"><h1>Uppgift 5 - Tennisklubben</h1></a>
+<p><b>Problem id: tennis</b></p>
+<p>
+I en tennisklubb finns <em>n</em> spelare. De &auml;r alla rankade fr&aring;n
+den b&auml;ste med rankingnummer 1 till den s&auml;mste som har
+rankingnummer <em>n</em>. Men tennis &auml;r en ober&auml;knelig sport och det kan bli s&aring; att den som &auml;r rankad 99:a n&aring;gon g&aring;ng vinner mot 32:an. Om 32:an i sin tur sl&aring;r 85:an, som i sin tur sl&aring;r 44:an som sl&aring;r 1:an, inneb&auml;r det att 99:an har en kedja med
+bara fyra l&auml;nkar till toppen! Du ska skriva ett program som f&ouml;r en given spelare r&auml;knar ut l&auml;ngden av den kortaste kedjan upp till toppen, eller avg&ouml;r att ingen s&aring;dan kedja finns. F&ouml;r den som direkt har vunnit mot 1:an &auml;r l&auml;ngden allts&aring; 1 och f&ouml;r 1:an sj&auml;lv &auml;r f&ouml;rst&aring;s l&auml;ngden 0.</p>
+</p>
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r tv&aring; heltal <em>n</em> och <em>k</em>, (1 &le; <em>n</em> &le; 100 och 1 &le; <em>k</em> &le; <em>n</em>), d&auml;r <em>n</em> &auml;r antalet spelare och <em>k</em> &auml;r rankingnumret f&ouml;r den spelare som vi &auml;r intresserade av. P&aring; andra raden st&aring;r ett heltal <em>m</em>, (1 &le; <em>m</em> &le; 1000), antalet matcher som har spelats. D&auml;refter f&ouml;ljer <em>m</em> rader, vardera beskrivande en match. P&aring; var och en av dessa rader st&aring;r tv&aring; heltal i intervallet 1..<em>n</em>. Det f&ouml;rsta talet &auml;r rankingnumret f&ouml;r den spelare som vann matchen och det andra talet &auml;r rankingnumret f&ouml;r den spelare som f&ouml;rlorade matchen. Observera att samma par av spelare kan ha m&ouml;tts flera g&aring;nger med samma eller olika resultat.
+</p>
+<h2>Utdata</h2>
+Programmet ska skriva ut ett heltal: l&auml;ngden av den kortaste vinstkedjan fr&aring;n spelare <em>k</em> upp till toppen, eller talet <span style="font-family:monospace">-1</span> (allts&aring; minus ett) om ingen s&aring;dan kedja finns.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+5 4
+8
+1 3
+2 5
+4 2
+5 2
+3 4
+5 1
+2 3
+1 4
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+3
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg6"><h1>Uppgift 6 - Kontaktf&ouml;rmedlingen</h1></a>
+<p><b>Problem id: kontakt</b></p>
+<p>
+En kontaktf&ouml;rmedling har specialiiserat sig p&aring; att para ihop m&auml;nniskor med avseende p&aring; hur m&aring;nga intressen personerna har gemensamt. Personernas k&ouml;n spelar d&auml;remot ingen roll. I en f&ouml;rmedlingsomg&aring;ng deltar <em>n</em> personer. Var och en av dessa f&aring;r fylla i ett fr&aring;geformul&auml;r med <em>m</em> stycken ja/nej-fr&aring;gor av typen "Tycker du om katter?", "Programmerar du f&ouml;r n&ouml;jes skull?", etc. M&aring;let &auml;r att varje person ska paras ihop med den av de andra personerna som har maximal &ouml;verensst&auml;mmelse med de egna svaren, eller, om det finns flera som har maximal &ouml;verensst&auml;mmelse, vem som helst av dessa.</p>
+
+<p>Tyv&auml;rr &auml;r detta inte alltid m&ouml;jligt. Tv&aring; personer kanske b&aring;da passar b&auml;st ihop med en tredje, medan denna tredje egentligen passar b&auml;st ihop med n&aring;gon helt annan person. Kontaktf&ouml;rmedlingen har dock kommit p&aring; en l&ouml;sning p&aring; detta problem. Man v&auml;ljer ut en mindre grupp personer och ser till att alla personerna i denna grupp paras ihop tv&aring; och tv&aring; s&aring; att &ouml;nskem&aring;let att alla f&aring;r sin optimala partner <em>bland personerna i den mindre gruppen</em> tillgodoses. D&aring; &auml;r dessa glada och n&ouml;jda eftersom de aldrig f&aring;r veta att det kanske fanns n&aring;gon person utanf&ouml;r den utvalda gruppen som egentligen passade &auml;nnu b&auml;ttre.</p>
+
+<p>Kontaktf&ouml;rmedlingen f&aring;r betalt per antal n&ouml;jda kunder och man vill d&auml;rf&ouml;r naturligtvis g&ouml;ra den utvalda gruppen s&aring; stor som m&ouml;jligt. Du ska skriva ett program som ber&auml;knar det st&ouml;rsta antalet personer som kan ing&aring; i gruppen.</p>
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r tv&aring; heltal <em>n</em> och <em>m</em>, (4 &le; <em>n</em> &le; 20 och 10 &le; <em>m</em> &le; 100), d&auml;r <em>n</em> &auml;r antalet personer och <em>m</em> &auml;r antalet fr&aring;gor i formul&auml;ret. D&auml;refter f&ouml;ljer <em>n</em> rader, som var och en ger svaren f&ouml;r en person. Varje rad best&aring;r av en str&auml;ng med <em>m</em> tecken som kan vara antingen j eller n. Det f&ouml;rsta tecknet anger svaret p&aring; f&ouml;rsta fr&aring;gan (j=ja, n=nej), det andra tecknet anger svaret p&aring; andra fr&aring;gan o.s.v. Alla personerna f&aring;r naturligtvis fr&aring;gorna i samma ordning.
+</p>
+<h2>Utdata</h2>
+Programmet ska skriva ut ett heltal: det maximala antalet personer som kan v&auml;ljas ut och paras ihop enligt ovanst&aring;ende kriterium. Observera att talet alltid m&aring;ste vara j&auml;mnt.
+</p>
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+5 10
+njjjnnnnnj
+nnjnnnnnnn
+jnjjnnjjnn
+njjnnjjjjn
+njnjjnjnjj
+</pre>
+</div>
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+4
+</pre>
+</div>
+<h2>Exempel: F&ouml;rklaring</h2>
+<p>L&aring;t oss kalla personerna A, B, C, D och E i den ordning de ges i indata. Det enda s&auml;ttet att f&aring; fyra n&ouml;jda kunder &auml;r att para ihop A med E (6 identiska svar) och C med D (5 identiska svar). Detta kan man g&ouml;ra trots att A egentligen passar b&auml;st ihop med B (7 identiska svar), f&ouml;r B finns inte med i den utvalda gruppen. Observera att <em>om</em> man skulle para ihop A och B s&aring; skulle det inte bli n&aring;got mer par eftersom C f&ouml;redrar B, och E f&ouml;redrar A.</p>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg7"><h1>Uppgift 7 - Kuben</h1></a>
+<p><b>Problem id: kuben</b></p>
+<p>
+<img class="figure" src='p1.gif'>
+</p>
+<p>
+En kub av storleken 3x3x3 ska byggas ihop av ett antal tredimensionella "pusselbitar", som var och en best&aring;r av ett antal sammanh&auml;ngande sm&aring;kuber, sammanlagt 27 stycken. I figuren ovan visas ett exempel p&aring; en s&aring;dan kub samt de fem pusselbitar den &auml;r uppbyggd av. F&ouml;r enkelhets skull &auml;r de avbildade roterade p&aring; det s&auml;tt som de sitter i kuben, men i verkligheten f&aring;r pussel-l&ouml;saren de fem bitarna huller om buller. Du ska skriva ett program som tar emot en beskrivning av varje pusselbit och sedan vrider och pusslar ihop dem s&aring; att en kub med storlek 3x3x3 bildas.</p> 
+<p>
+Beskrivningen av pusselbitarna ges p&aring; samma s&auml;tt som i uppgift 3, d.v.s. biten l&auml;ggs ner p&aring; ett 3x3 rutn&auml;t s&aring; att inga h&aring;lrum bildas och sedan anges h&ouml;jden f&ouml;r var och en av de nio "staplarna". L&aring;t oss t.ex. titta n&auml;rmare p&aring; den bl&aring; pusselbiten. Den kan roteras s&aring; att den ligger enligt figuren nedan och kan d&auml;rf&ouml;r beskrivas som i tabellen till h&ouml;ger.</p>
+<p>
+<table class="array">
+<tr>
+<td><img class="figure" src='p2.png'></td>
+<td valign="center"><img class="figure" src='p3.png'></td>
+<!--<table>
+<tr><td>0<td>0<td>0
+<tr><td>0<td>3<td>0
+<tr><td>2<td>2<td>1
+</table>-->
+</tr>
+</table>
+</p>
+<p>
+N&auml;r programmet har pusslat ihop kuben ska det, ist&auml;llet f&ouml;r att beskriva sj&auml;lva kubens uppbyggnad, r&auml;kna ut hur m&aring;nga av 1x1-kvadraterna p&aring; varje pusselbit som &auml;r exponerade p&aring; kubens utsida, d.v.s. som ligger p&aring; n&aring;gon av kubens sex sidor. Anledningen till detta &auml;r att dessa tal &auml;r oberoende av hur man roterar den f&auml;rdiga kuben.</p>
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r ett heltal <em>n</em>, (3 &le; <em>n</em> &le; 7): antalet pusselbitar. Sedan f&ouml;ljer 3 rader f&ouml;r varje pusselbit, allts&aring; sammanlagt <em>3n</em> rader. P&aring; varje rad st&aring;r tre heltal i intervallet 0..3, h&ouml;jden f&ouml;r varje stapel.</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska</span> skriva ut <em>n</em> heltal separerade med blanksteg, antalet kvadrater av varje pusselbit som ligger p&aring; n&aring;gon av kubens sex yttersidor. Ordningen p&aring; pusselbitarna ska vara samma som i indata. Om det finns flera l&ouml;sningar kan du ange vilken som helst av dessa. Observera att summan av talen alltid ska vara lika med 54, vilket &auml;r kubens totala begr&auml;nsningsarea.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+5
+1 1 0
+1 0 0
+1 1 0
+0 0 0
+0 3 0
+2 2 1
+0 1 1
+1 1 0
+0 0 0
+1 0 0
+2 0 0
+1 1 0
+0 0 2
+1 1 1
+0 0 0
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+12 13 8 11 10
+</pre>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+               
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Kvalet 2002</title>
+   
+</head>
+ <body>
+<font face="Helvetica, Arial, sans-serif"><font size="+2"><b>Kommentarer
+och  l&ouml;sningar  till uppgifterna i<br>
+    Finalen i Programmeringsolympiaden 2002.</b></font><font size="+2"><br>
+</font><br>
+</font><font face="Helvetica, Arial, sans-serif">L&ouml;sningarna &auml;r
+skrivna i C/C++ och f&ouml;ljer t&auml;vlingsstandarden p&aring; s&aring; 
+s&auml;tt att de &auml;r helt okommenterade och obegripliga. I n&aring;gra
+fall anv&auml;nds stdin ist&auml;llet f&ouml;r l&auml;sning fr&aring;n fil.<b><br>
+<br>
+</b><a href="UppgifterFin02.pdf">  Uppgifterna (PDF)</a>
+<a href="kval02svar.pdf"><a href="TestDataFin02.htm"><br>
+<a href="TestDataFin02.zip">Testdata (ZIP)</a>
+</a>
+</a>
+</font><a href="TestDataFin02.zip"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"></font><font face="Helvetica, Arial, sans-serif"><br>
+</font><b><big><font face="Helvetica, Arial, sans-serif"> Uppgift 1 - Nattlig
+f&ouml;rflyttning</font></big></b><b><big><font face="Helvetica, Arial, sans-serif"><br>
+</font></big></b><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Ett enkelt s&auml;tt att
+l&ouml;sa uppgiften &auml;r med rekursion (s.k. backtracking). I varje steg
+kommer alltid tv&aring; personer att g&aring; &ouml;ver, varefter en person
+g&aring;r tillbaka med ficklampan om det finns n&aring;gra personer kvar
+att h&auml;mta. Om man kommer p&aring; att det alltid &auml;r den snabbaste
+personen som ska g&aring; tillbaka s&aring; hinner man g&aring; igenom alla
+ m&ouml;jliga s&auml;tt att g&ouml;ra f&ouml;rflyttningen, eftersom det d&aring;
+bara finns 21*15*10*6*3 = 56700 s&auml;tt (2 av 7 kan v&auml;ljas p&aring;
+21 s&auml;tt, 2 av 6 p&aring; 15 s&auml;tt o.s.v.)</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Detta &auml;r naturligtvis
+en v&auml;ldigt d&aring;lig metod om man har m&aring;nga personer, eftersom
+tids&aring;tg&aring;ngen f&ouml;r programmet n&auml;r man har n personer
+ungef&auml;r blir proportionell mot (n!)^2. Exempelvis fungerar det inte
+f&ouml;r 10 personer. Vi fick in m&aring;nga b&auml;ttre bidrag av typen
+dynamisk programmering, vilket fungerar bra eftersom antalet "tillst&aring;nd"
+ bara &auml;r 2^8.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg1.cpp"><font face="Helvetica, Arial, sans-serif"> L&ouml;sningsf&ouml;rslag</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif"><br>
+Uppgift 2 - Ordlek</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Detta &auml;r ett typexempel
+ p&aring; backtracking. Man har en lista p&aring; vilka bokst&auml;ver som
+finns kvar att anv&auml;nda. S&aring; testar man f&ouml;rst vilken bokstav
+som kan s&auml;ttas som f&ouml;rsta bokstav i ordet som ska bildas. N&auml;r
+man hittat en giltig bokstav stryker man den fr&aring;n listan och anropar
+samma funktion igen (rekurserar) fast nu b&ouml;rjar man fr&aring;n andra
+ bokstaven i ordet o.s.v. Varje g&aring;ng man placerar en bokstav m&aring;ste
+man kolla att stavningsreglerna uppfylls. N&auml;r man s&auml;tter dit A
+eller G, de bokst&auml;ver som kan vara sista bokstav i ordet, kollar man
+om det ord som har bildats &auml;r l&auml;ngre &auml;n det tidigare l&auml;ngsta
+ordet. N&auml;r man har testat alla m&ouml;liga bokst&auml;ver p&aring; en
+position, g&aring;r man tillbaka till f&ouml;reg&aring;ende position, s&auml;tter
+tillbaka den bokstaven i listan och forts&auml;tter med n&auml;sta testbokstav
+p&aring; den niv&aring;n. Allt detta kan sk&ouml;tas med en rekursiv funktion,
+eller som i l&ouml;sningsf&ouml;rslaget n&aring;gra olika f&ouml;r folofjant,
+pedal respektive valfri bokstav.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg2.cpp"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg2.cpp"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 3 - Wildcards</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">G&aring; igenom alla st&auml;derna
+ i tur och ordning och se om de matchar s&ouml;kstr&auml;ngen. Att g&ouml;ra
+sj&auml;lva matchningen tillh&ouml;r praktiskt sett de viktigaste algoritmiska
+problemen (anv&auml;nds t.ex. inom bioinformatik) och har genererat m&auml;ngder
+av intressanta metoder som kan vara v&auml;rda att s&auml;tta sig in i. Eftersom
+str&auml;ngl&auml;ngden i denna uppgift var t&auml;mligen begr&auml;nsad,
+r&auml;cker det dock med en rekursiv funktion av samma typ som i uppgift
+2. Om en bokstav matchar exakt eller om s&ouml;kstr&auml;ngstecknet &auml;r
+? &auml;r det bara att g&aring; vidare med n&auml;sta bokstav. Om s&ouml;kstr&auml;ngstecknet
+&auml;r * s&aring; kan man t.ex. testa att hoppa fram alla m&ouml;jliga steg
+i namnet (0, 1, 2 o.s.v. ), vilket mosvarar att asterisken f&aring;r ers&auml;tta
+det antalet tecken. Om man efter ett antal steg finner att namnet och s&ouml;kstr&auml;nget
+slutar samtidigt s&aring; har man hittat en s&ouml;ktr&auml;ff.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg3.cpp"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg3.cpp"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif"> Uppgift 4 - Alfametik</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> L&auml;mpligen s&aring;
+b&ouml;rjar man med att lokalisera de unika bokst&auml;verna (max 10 st)
+och d&auml;refter lagra dessa in en liten tabell. Sedan tittar p&aring; alla
+m&ouml;jliga kombinationer att placera ut siffrorna 0-9 p&aring; de 10 bokst&auml;verna.
+Antalet</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> m&ouml;jliga s&aring;dana
+permutationer &auml;r 10! = 10*9*8*7*6*5*4*3*2*1 = 3628800 vilket med dagens</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> datorer inte tar l&aring;ng
+tid. F&ouml;r att g&aring; igenom alla permutationer kan man antingen</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> anv&auml;nda rekursion
+eller, om man programmerar i C++, STL funktionen next_permutation. F&ouml;r
+varje permutation kontrollerar man sedan om additionen st&auml;mmer samt
+att inga bokst&auml;ver som &auml;r f&ouml;rst p&aring; en rad blev tilldelad
+en nolla.</font><font face="Helvetica, Arial, sans-serif"> Exempell&ouml;sningen
+&auml;r lite &ouml;verkomplicerad eftersom den &auml;ven till&aring;ter siffror
+i termerna/summan.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><br>
+<a href="uppg4.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg4.c"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif"> Uppgift 5 - Motorv&auml;gar</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Denna uppgift l&ouml;ser
+man genom att anv&auml;nda sig av ett minimalt uppsp&auml;nnande tr&auml;d
+(se </font><font face="Helvetica, Arial, sans-serif"><a href="http://home.student.uu.se/paso3493/ioi/mst.htm">
+  tr&auml;ningssidan</a>
+</font><font face="Helvetica, Arial, sans-serif">). Det som kan vara f&ouml;rvillande
+ &auml;r att vissa v&auml;gar redan &auml;r motorv&auml;gar, vilket g&ouml;r
+att den uppsp&auml;nnande grafen inte n&ouml;dv&auml;ndigtvis &auml;r ett
+tr&auml;d. Likv&auml;l &auml;r det samma algoritm man anv&auml;nder, t ex
+Kruskal eller Prims algoritm.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg5.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg5.c"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif"> Uppgift 6 - Ett
+markant  problem</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Detta var t&auml;vlingens
+sv&aring;raste uppgift, vilket var planerat. Om storleken p&aring; omr&aring;det
+hade varit mindre hade uppgiften varit betydligt enklare. D&aring; kan man
+lagra hela omr&aring;det i en stor matris och genomf&ouml;ra flera stycken
+floodfills. Dvs, man b&ouml;rjar i en ruta i matrisen som inte &auml;nnu
+&auml;r fylld, "fyller" omr&aring;det (med en DFS eller BFS s&ouml;kning)
+ tills man st&ouml;ter p&aring; staket samt lagrar hur m&aring;nga rutor
+man  fyllde. Detta upprepas tills hela omr&aring;det blivit fyllt, och man
+har  d&aring; storleken</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> p&aring; alla omr&aring;den.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Men nu kunde omr&aring;det
+vara v&auml;ldigt stort, och att skapa en matris p&aring; hela omr&aring;det
+p&aring; en g&aring;ng &auml;r inte m&ouml;jligt. Men antalet staket i omr&aring;det
+&auml;r litet, max 50 st, vilket inneb&auml;r att antalet unika x resp. y
+koordinater som anv&auml;nds av staketen &auml;r max</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> 100. Med andra ord kan
+ omr&aring;det skalas ner till ett omr&aring;de med storleken 100x100. D&auml;refter</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> anv&auml;nds algoritmen
+ovan, och vid ber&auml;knandet av arean s&aring; skalar man upp storleken</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> p&aring; rutorna i matrisen.
+ </font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg6.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.c"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 7 - Sn&ouml;plogning</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">H&auml;r var det meningen
+att man skulle anv&auml;nda sig av dynamisk programmering (se </font><font face="Helvetica, Arial, sans-serif"><a href="http://home.student.uu.se/paso3493/ioi/dynamisk.htm">
+  tr&auml;ningssidan</a>
+</font><font face="Helvetica, Arial, sans-serif">). Detta &auml;r m&ouml;jligt
+tack vare de enkelriktade huvudgatorna. Om man har r&auml;knat ut den "maximala
+v&auml;gen" f&ouml;r varje tids&aring;tg&aring;ng n&auml;r man kommit n steg
+i &ouml;stlig riktning, s&aring; kan man direkt r&auml;kna ut de maximala
+v&auml;garna till korsningarna n+1 steg i &ouml;stlig riktning, eftersom
+man vet att man aldrig kommer att &aring;ka tillbaka &aring;t v&auml;ster.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">L&aring;t T(x, y, t) beteckna
+ maximala nyttan f&ouml;r v&auml;gen med tiden t till koordinat (x, y) samt
+h(x, 0), h(x, 1) och m(x) nyttorna f&ouml;r den s&ouml;dra huvudgatan, norra
+huvudgatan respektive tv&auml;rgatorna. Fr&aring;n b&ouml;rjan ses att T(0,0,0)
+= 0, T(0,1,1) = m(0) och T(0,0,2) = m(0). F&ouml;r varje x-koordinat b&ouml;rjar
+man med att ta huvudgatorna dit, d.v.s. T(x, y, t) = T(x-1, y, t-1) + h(x,
+y). Sedan ska man &aring;ka p&aring; tv&auml;rgatorna och d&aring; finns
+det fyra s&auml;tt att &aring;ka: norrut, s&ouml;derut, norrut + s&ouml;derut
+och s&ouml;derut + norrut (notera att det aldrig &auml;r n&aring;gon id&eacute;
+att &aring;ka mer &auml;n tv&aring; g&aring;nger p&aring; samma tv&auml;rgata).
+Det enklaste &auml;r att ta de fyra fallen i tur och ordning. Det tredje
+fallet leder till exempel till T(x, 0, t) = T(x, 0, t-2) + m(x) eftersom
+man bara tj&auml;nar nytta &aring;t ena h&aring;llet. Det man sparar i T
+&auml;r naturligtvis maximum f&ouml;r alla fallen. Det g&auml;ller ocks&aring;
+att h&aring;lla tungan r&auml;tt i mun s&aring; att man inte r&aring;kar
+skriva &ouml;ver n&aring;got v&auml;rde som man sen har t&auml;nkt att anv&auml;nda.
+ I exempell&ouml;sningen anv&auml;nds en kompaktare tabell med antalet "omv&auml;gar"
+ist&auml;llet f&ouml;r tiden som sista index till T, men det &auml;r naturligtvis
+valfritt.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Det finns andra s&auml;tt
+att l&ouml;sa uppgiften. Exempelvis kan man g&aring; rekursivt och bara kolla
+i varje "tillst&aring;nd" (x, y, t) om man har varit d&auml;r innan och d&aring;
+haft b&auml;ttre nytta, i s&aring; fall &auml;r det ju hoppl&ouml;st och
+man ska backtracka ist&auml;llet. Man kan visa att det v&auml;rsta teoretiska
+fallet d&aring; blir ca 200 miljoner rekursiva anrop, vilket fortfarande
+g&aring;r att klara inom tiden. Tyv&auml;rr var det m&aring;nga som gjorde
+rekursiva l&ouml;sningar utan denna optimering. D&aring; blir det v&auml;rsta
+fallet upp mot 2^200, vilket tar ett tag.</font><font face="Helvetica, Arial, sans-serif">
+ ..</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg7.cpp"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg7.cpp"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif"> Uppgift 8 - Flyken
+till  vadst&auml;llet</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"> Denna uppgift &auml;r ett
+typexempel p&aring; ett kortaste-v&auml;gen problem (i det h&auml;r fallet
+egentligen snabbaste-v&auml;gen, men det &auml;r samma sak). Effektivast
+l&ouml;ser man ett s&aring;dant problem genom att anv&auml;nda sig av Dijkstras
+algoritm (se </font><font face="Helvetica, Arial, sans-serif"><a href="http://home.student.uu.se/paso3493/ioi/shortest.htm">
+  tr&auml;ningssidan</a>
+</font><font face="Helvetica, Arial, sans-serif">) men eftersom grafen var
+ v&auml;ldigt speciell s&aring; gick den att l&ouml;sa med rekursion och
+dynamisk programmering om man var lite klurig.</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg8.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<br>
+<br>
+</body>
+</html>

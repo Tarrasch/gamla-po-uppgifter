@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Kvalet 2005</title>
+</head>
+<body>
+<big><b><font face="Helvetica, Arial, sans-serif"><big>L&ouml;sningar
+till uppgifterna i </big><big><br>
+</big><big>Kvalet till Programmeringsolympiaden 2005.</big><br>
+<br>
+</font></b><font face="Helvetica, Arial, sans-serif"><small>L&ouml;sningarna
+&auml;r skrivna i C och en del av dem &auml;r tyv&auml;rr
+okommenterade. Tillsammans med
+kommentarerna nedan hoppas jag &auml;nd&aring; att de kan vara till
+hj&auml;lp.<br>
+</small></font><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><big><font face="Helvetica, Arial, sans-serif"><small>Kom
+ih&aring;g
+att alla s&auml;tt att l&ouml;sa en uppgift &auml;r r&auml;tt utom de
+som
+&auml;r fel!<br>
+Skriv g&auml;rna om ni har fr&aring;gor, kommentarer, tips om andra
+l&ouml;sningar m.m. Kolla ocks&aring; g&auml;rna in <a href="../../ioi">tr&auml;ningssajten</a>.<br>
+P&auml;r S&ouml;derhjelm, <a href="mailto:par.soderhjelm@teokem.lu.se">par.soderhjelm@teokem.lu.se</a><br>
+</small></font></big>
+<hr style="width: 100%; height: 2px;"><big><a href="kval02problem.pdf"><small><font
+ face="Helvetica, Arial, sans-serif"><a href="POKval05Problem.pdf">Uppgifterna
+(PDF)</a></font></small></a>&nbsp; <small><font
+ face="Helvetica, Arial, sans-serif">R&auml;ttelse: svaren p&aring;
+testexemplen i uppgift 4 ska vara KALLI och PIKTU.<br>
+Testdata (PDF) (tillg&auml;ngligt inom kort)<br>
+</font></small></big>
+<hr style="width: 100%; height: 2px;"><big><small><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></small><b><font face="Helvetica, Arial, sans-serif">Uppgift 1 -
+Tomater</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">H&auml;r simulerar man
+helt enkelt f&ouml;rloppet dag f&ouml;r dag med hj&auml;lp av en array
+som talar om huruvida varje tomat &auml;r mogen eller ej. Varje dag
+kollar man f&ouml;r varje omogen tomat om n&aring;gon av dess grannar
+&auml;r mogna. I s&aring; fall markerar man den som mogen. En liten
+knepighet &auml;r att en "nymogen" tomat inte f&aring;r p&aring;verka
+sina omogna grannar under samma dag som den sj&auml;lv mognade. Detta
+kan l&ouml;sas antingen genom att ha tv&aring; olika arrayer f&ouml;r
+tomatstatusen f&ouml;re respektive efter den aktuella dagen, eller
+genom att, som i mitt l&ouml;sningsf&ouml;rslag, spara vilken dag som
+varje tomat mognade och d&aring; endast l&aring;ta dem som mognade
+tidigare p&aring;verka.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg1.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg1.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 2 -
+Tv&aring;valsfr&aring;gorna</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Eftersom antalet
+fr&aring;gor (nf) &auml;r begr&auml;nsat till 12 finns det h&ouml;gst
+2^12=4096 olika facit. D&auml;rf&ouml;r kan vi g&aring; igenom alla
+dessa m&ouml;jliga facit tills vi hittar ett som f&ouml;r var och en av
+deltagarnas svar ger det angivna antalet r&auml;tt. Att generera alla
+facit kan g&ouml;ras rekursivt genom att ha en funktion som f&ouml;r en
+viss fr&aring;ga s&auml;tter f&ouml;rst svaret 'j' och sedan anropar
+sig sj&auml;lv f&ouml;r n&auml;sta fr&aring;ga, d&auml;refter
+s&auml;tter 'n' och anropar sig sj&auml;lv f&ouml;r n&auml;sta
+fr&aring;ga. N&auml;r funktionen anropar sig sj&auml;lv med alla
+fr&aring;gor redan ifyllda kollar man om facit st&auml;mmer. Om man
+&auml;r lite lat kan man ist&auml;llet anv&auml;nda sig av att varje
+tal mellan 0 och (2^nf)-1 direkt ger ett facit om man
+&ouml;vers&auml;tter det till bin&auml;r form. Exempelvis, f&ouml;r
+nf=2, erh&aring;lls 00, 01, 10 och 11, vilket naturligtvis kan
+&ouml;vers&auml;ttas direkt till 'nn', 'nj', 'jn' och 'jj'. Med bitvisa
+operatorer blir det hela mycket enkelt, vilket visas i
+l&ouml;sningsf&ouml;rslaget.</font><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg2.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg2.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 3 -
+Gr&auml;sklippning</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">En lite udda typ av
+uppgift som bygger p&aring; att &auml;ven om gr&auml;sklippningen tar
+helt olika l&aring;ng tid varje g&aring;ng, s&aring; f&aring;r man
+samma svar om man tar ett medelv&auml;rde &ouml;ver m&aring;nga
+klippningar. Praktiskt sett utg&ouml;r detta inget problem, man
+l&aring;ter en loop g&aring; 10000 g&aring;nger, utf&ouml;r en
+klippning varje g&aring;ng och l&auml;gger ihop antalet minuter som
+varje klippning tar. P&aring; slutet delas denna summa med 10000
+f&ouml;r att f&aring; medelv&auml;rdet. Sj&auml;lva klippningen
+g&ouml;rs enklast i en loop d&auml;r varje iteration inneb&auml;r ett
+(till&aring;tet) steg f&ouml;r gr&auml;sklipparen. Notera att varje
+steg ska tas oberoende av&nbsp; var gr&auml;sklipparen har varit innan,
+men programmet m&aring;ste &auml;nd&aring; h&aring;lla reda p&aring;
+vilka rutor som gr&auml;sklipparen har varit p&aring; f&ouml;r att
+kunna avg&ouml;ra n&auml;r klippningen &auml;r klar. N&auml;r man tar
+ett slumpm&auml;ssigt steg kan det vara bekv&auml;mt att anv&auml;nda
+en konstant array med tv&aring; tal (f&ouml;rflyttning i x- och y-led)
+f&ouml;r var och en av de fyra riktningarna.</font><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg3.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg3.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 4 -
+Namn</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Denna olycksaliga
+uppgift &auml;r inte s&aring; sv&aring;r egentligen, den blev dock
+besv&auml;rligare eftersom det var fel p&aring; de givna testfallen.
+Jag passar p&aring; att be om urs&auml;kt f&ouml;r detta misstag.<br>
+<br>
+Man b&ouml;rjar l&auml;mpligtvis med att &ouml;vers&auml;tta
+personnumret till ett ordningstal som anger numrets plats i listan.
+Detta kan g&ouml;ras genom att loopa &ouml;ver &aring;rets 365 dagar
+med en dagr&auml;knare. N&auml;r man kommer till det givna
+f&ouml;delsedatumet multiplicerar man dagr&auml;knaren med 1000 och
+l&auml;gger till de tre sista siffrorna i personnumret. Den andra delen
+av uppgiften &auml;r att hitta det namn som korresponderar mot detta
+ordningstal. Namnsorteringen som n&auml;mns i uppgiftstexten
+beh&ouml;ver naturligtvis inte g&ouml;ras i praktiken, det &auml;r
+b&auml;ttre att generera namnen i bokstavsordning och sluta n&auml;r
+man har kommit till r&auml;tt plats i listan (och helst INTE ett steg
+f&ouml;r tidigt!). F&ouml;r genereringen kan man&nbsp; anv&auml;nda ett
+rekursiv funktion som f&ouml;r en viss bokstavsposition g&aring;r
+igenom alla m&ouml;jliga bokst&auml;ver (de 9 vokalerna om det &auml;r
+position 2 eller 5, de 20 konsonanterna i &ouml;vriga fall) och
+f&ouml;r varje s&aring;dan bokstav anropar sig sj&auml;lv f&ouml;r
+n&auml;sta position. Man inser l&auml;tt att om bokst&auml;verna
+g&aring;s igenom i alfabetisk ordning i varje steg, s&aring; blir
+namnen automatiskt sorterade. N&auml;r funktionen anropas f&ouml;r
+position 6 har ett helt namn genererats och en r&auml;knare &ouml;kas.
+Om r&auml;knarens position &ouml;verensst&auml;mmer med det s&ouml;kta
+ordningstalet &auml;r det bara att avbryta och skriva ut namnet.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg4.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg4.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 5 -
+V&auml;nda</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><br>
+<font face="Helvetica, Arial, sans-serif">Detta &auml;r ett typiskt
+"s&ouml;kningsproblem", ganska vanligt f&ouml;rekommande p&aring;
+programmeringsolympiaden, l&auml;s vidare p&aring; v&aring;r <a
+ href="../../ioi">tr&auml;ningssajt</a>. Typiskt s&aring; finns det en
+startposition
+och en slutposition som det g&auml;ller att uppn&aring; med s&aring;
+f&aring; "drag" som m&ouml;jligt. Hur sv&aring;rt ett
+s&ouml;kningsproblem &auml;r beror inte s&aring; mycket p&aring; hur
+dragen ser ut, utan i f&ouml;rsta hand p&aring; hur m&aring;nga
+"tillst&aring;nd" som finns, d.v.s. hur m&aring;nga olika
+spelpositioner som kan uppst&aring; totalt. Om antalet tillst&aring;nd
+&auml;r mindre &auml;n vad man f&aring;r plats med i minnet (i
+storleksordningen en miljon), g&aring;r det alltid att l&ouml;sa
+problemet effektivt med s.k. bredden-f&ouml;rst-s&ouml;kning (BFS).
+Denna s&ouml;kning bygger p&aring; tv&aring; principer, dels att man
+aldrig g&aring;r till
+samma tillst&aring;nd flera g&aring;nger (man sparar var man har
+varit), och dels att man bes&ouml;ker tillst&aring;nden i
+"avst&aring;ndsordning", d.v.s. f&ouml;rst bes&ouml;ker man alla
+tillst&aring;nd som kan n&aring;s med ett drag fr&aring;n
+startpositionen, d&auml;refter alla med tv&aring; drag o.s.v.
+D&auml;rmed &auml;r man garanterad att hitta den kortaste v&auml;gen
+till slutpositionen, och tids&aring;tg&aring;ngen &auml;r
+j&auml;mf&ouml;rbar med antalet tillst&aring;nd. Antalet
+tillst&aring;nd i detta problem &auml;r N*2^(N-1), d.v.s. maximalt 448,
+vilket g&ouml;r s&ouml;kningen v&auml;ldigt effektiv. Det knepiga med
+att anv&auml;nda BFS i detta fall &auml;r att man m&aring;ste kunna
+&ouml;vers&auml;tta varje position till ett heltal f&ouml;r att kunna
+spara om man har varit d&auml;r innan. Detta kan g&ouml;ras genom att
+skapa ett bin&auml;rt tal med brickornas f&auml;rger (0 f&ouml;r svart,
+1 f&ouml;r vit) samt baka in information om var den tomma platsen finns.<br>
+<br>
+<a href="uppg5b.c">L&ouml;sningsf&ouml;rslag (BFS)</a><br>
+<br>
+Vill man undvika kr&aring;ngel med numrering av tillst&aring;nden, kan
+man tillgripa den andra generella s&ouml;kningsmetoden,
+djupet-f&ouml;rst-s&ouml;kning (DFS), ofta kallad backtracking.
+Fr&aring;n en viss st&auml;llning g&ouml;r en rekursiv funktion alla
+t&auml;nkbara drag, och f&ouml;r varje drag anropar den sig sj&auml;lv
+med den nya st&auml;llningen. Resultatet blir att man utforskar alla
+forts&auml;ttningar p&aring; ett visst f&ouml;rstadrag innan man
+utf&ouml;r n&auml;sta f&ouml;rstadrag, man s&ouml;ker allts&aring;
+p&aring; djupet ist&auml;llet f&ouml;r p&aring; bredden. D&aring;
+&auml;r man naturligtvis inte l&auml;ngre garanterad att hitta den
+kortaste dragserien till slutpositionen f&ouml;rst, utan man
+m&aring;ste s&ouml;ka igenom alla olika alternativ och hela tiden
+h&aring;lla reda p&aring; det b&auml;sta resultatet. D&auml;remot
+b&ouml;r man naturligtvis aldrig forts&auml;tta fram&aring;t i en
+dragserie som redan har fler drag &auml;n det b&auml;sta resultatet
+hittills. D&auml;rf&ouml;r &auml;r det viktigt att ha en &ouml;vre
+gr&auml;ns p&aring; antalet drag, eftersom man annars kan b&ouml;rja
+g&aring; runt i loopar och aldrig komma fram till slutpositionen. Om
+man inte vet n&aring;gon &ouml;vre gr&auml;ns kan man alltid, som i
+l&ouml;sningsexemplet nedan, chansa p&aring; en &ouml;vre gr&auml;ns,
+k&ouml;ra DFS-l&ouml;sningen och, om ingen l&ouml;sning hittas,
+&ouml;ka gr&auml;nsen och k&ouml;ra igen.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg5.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag
+(DFS)</font></a>
+<a href="uppg5.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 6 -
+CD-br&auml;nnaren</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Till skillnad
+fr&aring;n f&ouml;reg&aring;ende uppgift finns det&nbsp;
+h&auml;r ingen effektiv l&ouml;sning </font><font
+ face="Helvetica, Arial, sans-serif">(s&aring;vitt jag
+vet allts&aring;, det &auml;r fritt fram f&ouml;r inv&auml;ndningar)</font><font
+ face="Helvetica, Arial, sans-serif">, utan h&auml;r &auml;r det
+backtracking som g&auml;ller, alla f&ouml;rdelningar av katalogerna
+m&aring;ste testas. Tanken med uppgiften &auml;r att man inte ska
+beh&ouml;va uppfinna optimeringar med h&auml;nsyn till
+katalogernas storlekar eller kolla efter specialfall. D&auml;remot
+m&aring;ste man se upp s&aring; att man inte upprepade g&aring;nger
+testar f&ouml;rdelningar av katalogerna som egentligen &auml;r samma,
+d&aring; tar det sv&aring;raste fallet f&ouml;r l&aring;ng tid. Mitt
+l&ouml;sningsf&ouml;rslag bygger p&aring; att man fyller skiva efter
+skiva med kataloger. En rekursiv funktion testar att l&auml;gga in var
+och en av de kataloger som &auml;nnu inte har lagts p&aring;
+n&aring;gon skiva, och f&ouml;r varje val anropar funktionen sig
+sj&auml;lv med en mindre katalog att bekymra sig &ouml;ver. Man
+h&aring;ller naturligtvis reda p&aring; den b&auml;sta l&ouml;sningen
+som man hittills hittat, s&aring; att man exemplevis aldrig b&ouml;rjar
+fylla den femte skivan om man redan har hittat en l&ouml;sning med fem
+skivor. Tv&aring; viktiga f&ouml;rb&auml;ttringar av denna enkla
+l&ouml;sning b&ouml;r g&ouml;ras. F&ouml;r det f&ouml;rsta, n&auml;r vi
+placerar den f&ouml;rsta katalogen p&aring; varje skiva &auml;r det
+on&ouml;digt att testa alla m&ouml;jliga kataloger. Eftersom varje
+katalog &auml;nd&aring; ska in p&aring; n&aring;gon skiva kan vi utan
+problem best&auml;mma oss f&ouml;r att ta den f&ouml;rsta &auml;nnu
+otagna katalog vi har. F&ouml;r det andra, inom en given skiva spelar
+katalogernas ordning ingen roll. Har vi testat att l&auml;gga in
+katalogerna A, C, E p&aring; en skiva &auml;r det helt
+&ouml;verfl&ouml;digt att kolla C, E, A, eftersom detta ger samma
+resultat. Allts&aring; kan vi best&auml;mma att n&auml;r vi v&auml;l
+har lagt in en katalog p&aring; en skiva, s&aring; struntar vi i de
+kataloger som ligger f&ouml;re den (i indataordningen), &auml;ven om
+det finns kataloger d&auml;r som &auml;nnu inte &auml;r inlagda. Detta
+g&auml;ller naturligtvis endast s&aring; l&auml;nge vi h&aring;ller oss
+p&aring; samma skiva, n&auml;r vi b&ouml;rjar p&aring; en ny skiva
+m&aring;ste alla otagna kataloger komma ifr&aring;ga igen. L&auml;s
+g&auml;rna mer om liknande problem som har effektiva
+l&ouml;sningar p&aring; <a href="../../ioi">tr&auml;ningssajten</a>.
+(Dynamisk
+programmering -&gt; Knapsackproblemet)<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg6.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><br>
+</body>
+</html>

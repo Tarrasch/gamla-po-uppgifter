@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Kvalet 2005</title>
+</head>
+<body>
+<big><b><font face="Helvetica, Arial, sans-serif"><big>L&ouml;sningar
+till uppgifterna i </big><big><br>
+</big><big>Kvalet till Programmeringsolympiaden 2006.</big><br>
+<br>
+</font></b><font face="Helvetica, Arial, sans-serif"><small>L&ouml;sningarna
+&auml;r skrivna i C och sparsamt kommenterade. Tillsammans med
+kommentarerna nedan hoppas jag &auml;nd&aring; att de kan vara till
+hj&auml;lp.<br>
+</small></font><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><big><font face="Helvetica, Arial, sans-serif"><small>Kom
+ih&aring;g
+att alla s&auml;tt att l&ouml;sa en uppgift &auml;r r&auml;tt utom de
+som
+&auml;r fel!<br>
+Skriv g&auml;rna om ni har fr&aring;gor, kommentarer, tips om andra
+l&ouml;sningar m.m. Kolla ocks&aring; g&auml;rna in <a href="../../ioi">tr&auml;ningssajten</a>.<br>
+P&auml;r S&ouml;derhjelm, <a href="mailto:par.soderhjelm@teokem.lu.se">par.soderhjelm@teokem.lu.se</a><br>
+</small></font></big>
+<hr style="width: 100%; height: 2px;"><big><a href="POKval06Problem.pdf"><small><font
+ face="Helvetica, Arial, sans-serif">Uppgifterna
+(PDF)</font></small>&nbsp;</a> <small><font
+ face="Helvetica, Arial, sans-serif"><br>
+<a href="POKval06Svar.pdf">Testdata (PDF)</a><br>
+</font></small></big>
+<hr style="width: 100%; height: 2px;"><big><small><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></small><b><font face="Helvetica, Arial, sans-serif">Uppgift 1 -
+Forts&auml;tt talf&ouml;ljden</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">R&auml;kna ut
+skillnaden mellan de tv&aring; f&ouml;rsta talen, d=k<sub><font
+ size="-1">1</font></sub>-k<sub>2</sub>, samt skillnadens &auml;ndring,
+d.v.s. f=(k<sub>3</sub>-k<sub>2</sub>)-(k<sub>2</sub>-k<sub>1</sub>)
+som vi vet ska vara konstant under hela talf&ouml;ljden. Loopa sedan
+fram tio tal genom att i varje steg uppdatera skillnaden d genom att
+addera f.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg1.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg1.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 2 -
+Telefonipriser</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><span style="font-family: helvetica,arial,sans-serif;"></span>
+<table style="width: 100%; text-align: left;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><font
+ face="Helvetica, Arial, sans-serif">F&ouml;r varje telebolag kan
+kostnaden som funktion av samtalstiden beskrivas med en r&auml;t linje,
+y=kx+m. Dessa linjer visas f&ouml;r testexemplet i diagrammet till
+h&ouml;ger. Svaret ser man l&auml;tt i figuren, f&ouml;lj bara den
+linje som ligger l&auml;gst hela tiden, d.v.s. f&ouml;rst cyan, sen
+gr&ouml;n, r&ouml;d och slutligen magenta. En l&ouml;sning p&aring;
+uppgiften &auml;r s&aring;lunda att b&ouml;rja med bolaget med
+l&auml;gst fast avgift (som naturligtvis alltid &auml;r billigast
+f&ouml;r 0 minuter), ber&auml;kna sk&auml;rningspunkten med de
+&ouml;vriga bolagen, v&auml;lja&nbsp; sk&auml;rningspunkten med
+l&auml;gst x-koordinat och sedan g&ouml;ra likadant med det bolaget. En
+annan l&ouml;sning, som &auml;r enklare och kan anv&auml;ndas eftersom
+vi har ett helt antal minuter, &auml;r att f&ouml;r varje minutantal
+r&auml;kna ut priset f&ouml;r alla bolag och spara vilket som &auml;r
+billigast. Sedan scannar man igenom minutantalen och kollar mellan
+vilka minutantal som "bolagsbyte" sker, d&auml;r s&auml;tter man
+gr&auml;nserna. Hur l&aring;ngt upp i samtalstid m&aring;ste man
+r&auml;kna? Antingen stoppar man n&auml;r det bolag med l&auml;gst
+minutkostnad blivit billigast eller s&aring; observerar man att
+skillnaden i fast kostnad &auml;r h&ouml;gst 1000 kronor och skillnaden
+i minutkostnad minst 1 &ouml;re, s&aring; efter 100000 minuter
+m&aring;ste man vara i det sista intervallet.<br>
+      </font><font face="Helvetica, Arial, sans-serif"><br>
+      </font><a href="uppg2.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a><br>
+      </td>
+      <td style="vertical-align: top;"><span
+ style="font-family: helvetica,arial,sans-serif;"><img alt=""
+ src="teleplot.jpg" style="width: 447px; height: 312px;"></span></td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-family: helvetica,arial,sans-serif;"></span><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 3 -
+Ramsan</font></b></big><big><b><font face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Denna uppgift
+v&aring;llade inga problem f&ouml;r de flesta. Enklast &auml;r att
+spara statusen f&ouml;r varje barn (d.v.s. utr&auml;knad eller inte) i
+en vektor. N&auml;r man r&auml;knar s&aring; hoppar man f&ouml;r varje
+ord i ramsan fram tills man hittar n&aring;gon som inte &auml;r ute,
+men minst ett steg f&ouml;rst&aring;s. F&ouml;r att enkelt hantera att
+barnen st&aring;r i ring kan man anv&auml;nda modulus (% i C, MOD i
+Pascal). s=(s+1)%n g&ouml;r att s "g&aring;r runt": 4, 5, 0, 1, 2 ....
+om s=6.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg3.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg3.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 4 -
+Minisudoku</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><font face="Helvetica, Arial, sans-serif">Detta &auml;r en
+typisk backtracking-uppgift</font><font
+ face="Helvetica, Arial, sans-serif"> (</font><font
+ face="Helvetica, Arial, sans-serif">vanligt </font><font
+ face="Helvetica, Arial, sans-serif">f&ouml;rekommande p&aring;
+programmeringsolympiaden, </font><font
+ face="Helvetica, Arial, sans-serif">l&auml;s t.ex. avsnittet om
+s&ouml;kning p&aring; v&aring;r <a href="../../ioi">tr&auml;ningssajt</a>).
+</font><br>
+<font face="Helvetica, Arial, sans-serif">Med det menas i det h&auml;r
+fallet att man testar att fylla i en siffra i en tom ruta och
+f&ouml;rs&ouml;ker sedan l&ouml;sa resten av sudokun. Om man inte
+hittar en l&ouml;sning m&aring;ste det ju betyda att siffran var fel
+s&aring; d&aring; suddar man ut siffran (eller i allm&auml;nhet tar ett
+steg tillbaka: backtrackar) och testar en annan siffra varefter man
+f&ouml;rs&ouml;ker l&ouml;sa resten av sudokun igen. Men att
+f&ouml;rs&ouml;ka l&ouml;sa resten av sudokun &auml;r ju precis samma
+problem som vi hade fr&aring;n b&ouml;rjan, bara med en ytterligare
+ruta ifylld. D&auml;rf&ouml;r passar s&aring;dana problem
+utomordentligt bra att l&ouml;sa med en rekursiv funktion, d.v.s. en
+funktion som anropar sig sj&auml;lv. Denna kan t.ex. ta som parameter
+vilken ruta man h&aring;ller p&aring; att fylla i, fr&aring;n 0 till 15
+(l&auml;mpligtvis indikerar 16 att hela sudokun &auml;r ifylld). Om
+rutan &auml;r ifylld (enligt indata) ska den bara anropa sig sj&auml;lv
+med n&auml;sta ruta. Om den inte &auml;r ifylld testar man var och en
+av de fyra siffrorna och ser om den &auml;r OK med h&auml;nsyn till det
+som &auml;r ifyllt tidigare. I s&aring; fall sparas den siffran i rutan
+och funktionen anropar sig sj&auml;lv med n&auml;sta ruta.
+Efter&aring;t (d.v.s. om man inte hittade n&aring;gon l&ouml;sning)
+m&aring;ste man komma ih&aring;g att radera den ifyllda siffran
+s&aring; att den inte blir "fastl&aring;st". &Ouml;verhuvudtaget
+m&aring;ste man &aring;terst&auml;lla saker och ting som de var innan
+siffran valdes, eftersom denna uppenbarligen var fel.<br>
+<br>
+F&ouml;r att enkelt kolla om en siffra &auml;r OK s&aring; kan man
+anv&auml;nda sig av en 0/1-variabel f&ouml;r varje rad och siffra,
+d.v.s. den &auml;r 1 om siffran finns p&aring; raden och 0 om siffran
+inte finns. S&aring;ledes f&aring;r du inte fylla i en siffra p&aring;
+raden om variabeln redan &auml;r 1. Motsvarande g&ouml;rs f&ouml;r
+kolumner och "kvartsrutor". Detta r&auml;cker f&ouml;r att garantera
+att sudokun blir korrekt.<br>
+<br>
+</font><a href="uppg4.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag
+- grundversion</font></a><br>
+<br>
+<font face="Helvetica, Arial, sans-serif">Den enkla l&ouml;sningen ovan
+fungerar bra eftersom det inte finns s&aring; m&aring;nga s&auml;tt att
+fylla i sudokun, man hinner i princip prova alla s&aring; det finns
+inget behov av att "sk&auml;ra bort" delar av s&ouml;ktr&auml;det. Men
+antag nu att vi vill l&ouml;sa den vanliga 9*9-rutors sudokun. Om du
+n&aring;gon g&aring;ng har l&ouml;st en s&aring;dan sudoku f&ouml;r
+hand inser du l&auml;tt en nackdel med ovanst&aring;ende algoritm,
+n&auml;mligen att den alltid fyller i rutorna i ordning, fr&aring;n den
+&ouml;vre v&auml;nstra till den nedre h&ouml;gra. N&auml;r du
+d&auml;remot l&ouml;ser den f&ouml;r hand v&auml;ljer du omsorgsfullt
+vilken ruta som ska fyllas i h&auml;rn&auml;st, vilket g&ouml;r att du,
+om du har t&auml;nkt r&auml;tt, aldrig beh&ouml;ver sudda ut den siffra
+du skrev. Att programmera hela denna tankeprocess &auml;r inte s&aring;
+l&auml;tt, men det intressanta &auml;r att om vi till&aring;ter oss att
+backtracka beh&ouml;ver vi inte g&ouml;ra perfekta val hela tiden.
+P&aring; en sekund hinner vi kolla flera miljoner ifyllningar s&aring;
+det enda som kr&auml;vs &auml;r att vi l&aring;ter bli att g&ouml;ra de
+allra dummaste valen, eftersom dessa g&ouml;r att vi kan fastna med en
+felaktig siffra och sedan f&ouml;rg&auml;ves f&ouml;rs&ouml;ka testa
+igenom alla ifyllningar av de &ouml;vriga rutorna. En enkel optimering,
+som g&ouml;r att programmet klarar alla vanliga tidnings-sudokus som
+jag har testat, &auml;r att f&ouml;r varje ruta kolla hur m&aring;nga
+siffror som passar d&auml;r och sedan v&auml;lja att fylla i den ruta
+som har minst antal alternativ. I f&ouml;rslaget nedan &auml;r
+d&auml;rf&ouml;r parametern som beskriver vilken ruta som fylls i
+utbytt mot en funktion som returnerar just den ruta med minst antal
+alternativ. Annars &auml;r ingenting &auml;ndrat f&ouml;rutom att all
+explicit omn&auml;mning av 2 har bytts ut mot D s&aring; att man kan
+v&auml;lja att s&auml;tta D till 3 f&ouml;r den vanliga sudokun eller
+till och med 4 (om man &auml;ndrar BASE till 'A' s&aring; att A-P
+anv&auml;nds).<br>
+<br>
+</font><font><a href="uppg4b.c"><font
+ face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag -
+b&auml;ttre version, klarar st&ouml;rre sudokus</font></a></font><a
+ href="uppg4.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 5 -
+Regeringsbildning</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><br>
+<font face="Helvetica, Arial, sans-serif">Problemet kan delas upp i
+tv&aring; delproblem:<br>
+1. Ber&auml;kna oenigheten f&ouml;r en given regering<br>
+2. Testa alla regeringar och av dem som har majoritet v&auml;lja den
+med l&auml;gst oenighet.<br>
+<br>
+Det f&ouml;rsta problemet blir mycket enklare om man inser att en
+regerings position alltid blir medianen av de ing&aring;ende partiernas
+positioner (eller vilken som helst av de tv&aring; "mittpositionerna"
+om antalet partier &auml;r j&auml;mnt). Detta kan l&auml;tt visas
+p&aring; f&ouml;ljande s&auml;tt. Antag att regeringen intar
+medianpositionen p och det finns x partier med l&auml;gre position
+&auml;n p, y partier med h&ouml;gre position och s&aring;ledes n-x-y
+partier med positionen p. Om regeringen nu ist&auml;llet antar en
+position p+1 kommer &auml;ndringen i oenighet att bli x + (n-x-y) - y =
+n-2y, eftersom de partier med position l&auml;gre eller lika med p
+kommer att f&aring; flytta sig ett steg l&auml;ngre medan partierna med
+h&ouml;gre position f&aring;r flytta sig ett steg kortare. P&aring;
+motsvarande s&auml;tt blir &auml;ndringen i oenighet n-2x om positionen
+p-1 v&auml;ljs. Men om p nu &auml;r medianen &auml;r vi garanterade att
+x&lt;=n/2 och y&lt;=n/2. H&auml;rav f&ouml;ljer att b&aring;da dessa
+&auml;ndringar &auml;r st&ouml;rre &auml;n eller lika med 0 och p
+&auml;r d&auml;rmed en optimal position bland (p-1, p, p+1).
+V&auml;ljer vi en position l&auml;ngre ifr&aring;n medianen blir det
+bara &auml;nnu v&auml;rre; allt f&auml;rre partier vinner p&aring;
+&auml;ndringen och allt fler f&ouml;rlorar p&aring; den. Allts&aring;
+&auml;r p en optimal l&ouml;sning bland alla positioner.<br>
+<br>
+Oenigheten f&ouml;r en given regering kan d&auml;rf&ouml;r
+ber&auml;knas genom att sortera de ing&aring;ende partiernas positioner
+och v&auml;lja den mittersta, eller som i f&ouml;rslaget nedan genom
+att kolla hur m&aring;nga partier som ligger p&aring; varje position
+och sedan scanna igenom positionerna tills minst h&auml;lften av
+partierna har passerats. D&aring; &aring;terst&aring;r endast problem
+2, att testa alla regeringar. Detta &auml;r inget stort problem
+eftersom det h&ouml;gst kan finnas 2^10=1024 m&ouml;jliga regeringar.
+Att generera alla regeringar kan g&ouml;ras med en rekursiv funktion
+inneh&aring;llande en loop fr&aring;n 0 (partiet finns inte med) till 1
+(partiet finns med). &Auml;nnu enklare &auml;r att t&auml;nka p&aring;
+varje regering som ett bin&auml;rt tal d&auml;r varje bit talar om
+huruvida ett parti finns med eller inte. I s&aring; fall beh&ouml;vs
+bara en loop fr&aring;n 0 till 2<sup>n</sup>-1 och sedan plockas varje
+bit ut med bitvisa operatorer: b &amp; (1 &lt;&lt; a) ger den a:te
+biten (fr&aring;n h&ouml;ger) i talet b.<br>
+</font><font face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg5.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a><a
+ href="uppg5.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<font face="Helvetica, Arial, sans-serif"><br>
+</font><big><b><font face="Helvetica, Arial, sans-serif">Uppgift 6 -
+Byggsatshus</font></b></big><big><b><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font></b></big><font face="Helvetica, Arial, sans-serif"><br>
+</font><span style="font-family: helvetica,arial,sans-serif;">&Auml;ven
+detta problem blir l&auml;ttare om man isolerar ett delproblem,
+n&auml;mligen att r&auml;kna ut p&aring; hur m&aring;nga s&auml;tt
+W(n,k) man kan placera k f&ouml;nster p&aring; en sida med l&auml;ngden
+n. Om k=0 finns det f&ouml;rst&aring;s en m&ouml;jlighet och om
+k&gt;(n-1)/2 finns ingen m&ouml;jlighet (h&auml;r har vi tagit
+h&auml;nsyn till att f&ouml;nstren inte f&aring;r sitta l&auml;ngst ut
+i h&ouml;rnen). F&ouml;r mellanliggande k kan man r&auml;kna ut antalet
+m&ouml;jligheter genom en rekursionsformel. Det finns n&auml;mligen
+tv&aring; alternativ, i en viss position kan man antingen s&auml;tta
+ett f&ouml;nster eller inte. Om man s&auml;tter dit ett f&ouml;nster
+minskar antalet kvarvarande f&ouml;nster med 1 men samtidigt minskar
+den tillg&auml;nliga l&auml;ngden med 2 eftersom f&ouml;nstren inte
+f&aring;r sitta direkt bredvid varandra. Om man inte s&auml;tter dit
+ett f&ouml;nster &auml;ndras f&ouml;rst&aring;s inte antalet
+kvarvarande f&ouml;nster men &aring; andra sidan minskar den
+tillg&auml;ngliga l&auml;ngden bara med 1. Allts&aring; har vi f&ouml;r
+mellanliggande k:<br>
+<br>
+W(n,k) = W(n-2, k-1) + W(n-1, k)<br>
+<br>
+Denna formel tillsammans med specialfallen ovan kan naturligtvis
+l&auml;tt implementeras med en rekursiv funktion. F&ouml;r att snabba
+upp programmet (vilket inte &auml;r n&ouml;dv&auml;ndigt h&auml;r men
+&auml;r ett generellt trick som kan anv&auml;ndas f&ouml;r
+sv&aring;rare problem) kan man observera att denna funktion kommer att
+anropas m&aring;nga g&aring;nger med samma parametrar. S&aring;
+varf&ouml;r inte spara v&auml;rdet p&aring; W(n,k) i en tabell n&auml;r
+vi har r&auml;knat ut det och i b&ouml;rjan av den rekursiva funktionen
+l&auml;gga in en if-sats som kollar om vi redan vet v&auml;rdet
+p&aring; W(n,k) och i s&aring; fall bara ta det fr&aring;n tabellen
+ist&auml;llet f&ouml;r att ber&auml;kna det rekursivt.<br>
+<br>
+Det &aring;terst&aring;r nu att l&ouml;sa hela problemet. P&aring;
+varje hussida kan vi s&auml;tta godtyckligt m&aring;nga f&ouml;nster
+(naturligtvis begr&auml;nsat av det totala antalet p&aring; hela huset)
+och dessutom eventuellt en d&ouml;rr. Det totala antalet m&ouml;jliga
+hus f&aring;r man sedan genom att summera &ouml;ver alla dessa
+valm&ouml;jligheter. F&ouml;r varje val m&aring;ste vi r&auml;kna ut
+hur m&aring;nga s&auml;tt f&ouml;nstren och d&ouml;rrarna kan placeras
+p&aring; sidan men dessutom multiplicera med antalet m&ouml;jligheter
+det finns att konstruera de &aring;terst&aring;ende hussidorna n&auml;r
+de totala antalen f&ouml;nster och d&ouml;rrar korrigerats f&ouml;r de
+val vi har gjort p&aring; den aktuella hussidan. Eftersom detta &auml;r
+i stort sett samma problem anv&auml;nds l&auml;mpligtvis ytterligare en
+rekursiv funktion. D&ouml;rrhanteringen underl&auml;ttas av att det ur
+W-funktionens synvinkel inte &auml;r n&aring;gon skillnad mellan
+f&ouml;nster och d&ouml;rrar, s&aring; antalet s&auml;tt att placera k
+f&ouml;nster och en d&ouml;rr p&aring; en sida med l&auml;ngden n ges
+av (k+1)*W(n,k+1) eftersom vilken som helst av de k+1 "sakerna" kan
+vara d&ouml;rren. Har man kommit p&aring; allt detta &auml;r det bara
+att h&aring;lla tungan r&auml;tt i mun n&auml;r man skriver programmet
+s&aring; man inte t&auml;nker fel p&aring; en etta hit eller dit.&nbsp;<br>
+</span><font face="Helvetica, Arial, sans-serif"></font><font
+ face="Helvetica, Arial, sans-serif"><br>
+</font><a href="uppg6.c"><font face="Helvetica, Arial, sans-serif">L&ouml;sningsf&ouml;rslag</font></a>
+<a href="uppg6.cc"><font face="Helvetica, Arial, sans-serif"><br>
+</font></a>
+<br>
+</body>
+</html>

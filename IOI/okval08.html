@@ -1,0 +1,379 @@
+<html>
+<head>
+<title>Programmeringsolympiaden 2008: Onlinekvalets uppgifter</title>
+<link rel="stylesheet" href="http://kattis.csc.kth.se/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://kattis.csc.kth.se/css/problem.css" type="text/css" />
+</head>
+<body>
+<div id='container' style="height:auto;">
+<h1>Programmeringsolympiaden 2008: Onlinekvalet</h1>
+
+<p>T&auml;vlingen best&aring;r av sex uppgifter som alla finns i detta dokument. Snabbl&auml;nkar finns h&auml;r.
+<p align="center">
+<a href="#uppg1">Uppgift 1 - V&auml;ggreparation</a><br>	  
+<a href="#uppg2">Uppgift 2 - R&ouml;stk&ouml;p</a><br>	  
+<a href="#uppg3">Uppgift 3 - Gruppindelning</a><br>		  
+<a href="#uppg4">Uppgift 4 - Storken</a><br>			  
+<a href="#uppg5">Uppgift 5 - P&auml;rlband</a><br>		  
+<a href="#uppg6">Uppgift 6 - Pyramidspaning</a><br>            
+</p>
+<p>L&ouml;sningarna skickas in via Kattis <a href="http://kattis.csc.kth.se/judge_upload">Submit-sida.</a>Problemets ID st&aring;r i b&ouml;rjan av varje problembeskrivning. Observera att en l&ouml;sning blir accepterad (Accepted) av Kattis bara genom att l&ouml;sa exemplet som st&aring;r i uppgiften. Detta &auml;r allts&aring; ingen garanti f&ouml;r att l&ouml;sningen ger n&aring;gon po&auml;ng vid r&auml;ttningen, som genomf&ouml;rs efter t&auml;vlingens slut.</p>
+
+<p>F&ouml;r samtliga uppgifter g&auml;ller f&ouml;ljande:
+<ul>
+<li>Maximal exekveringstid: 5 sekunder.</li> <li>Maximal minnesanv&auml;ndning: 32 Mb</li></ul></p>
+<p>OBS! &Auml;ven om bara en rad skrivs ut s&aring; m&aring;ste den alltid avslutas med radbrytning.</p>
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg1"><h1>Uppgift 1 - V&auml;ggreparation</h1></a>
+<p><b>Problem id: vaggreparation</b></p>
+<p>
+Framsidan av mitt hus &auml;r t&auml;ckt med dekorativa kvadratiska
+brickor. Jag &auml;r dock orolig att n&aring;gra av brickorna inte
+sitter fast ordentligt och riskerar att ramla ner. Jag vill stadga upp
+de nuvarande brickorna s&aring; att v&auml;ggen blir stabil. I figuren
+nedan &auml;r de ursprungliga brickorna svarta och de lediga utrymmena
+p&aring; v&auml;ggen vita.</p>
+<p><img class="figure" src='vaggreparation1.png'></p>
+
+<p>V&auml;ggen blir stabil om varje bricka &auml;r uppstadgad hela
+v&auml;gen fr&aring;n marken. F&ouml;r att fixa v&auml;ggen ovan skulle
+jag beh&ouml;va &aring;tta brickor i de streckade positionerna nedan.</p>
+<p><img class="figure" src='vaggreparation2.png'></p>
+ 
+<p>Givet en v&auml;gg, ber&auml;kna det minsta antalet brickor som
+kr&auml;vs f&ouml;r att stadga upp de ursprungliga brickorna.</p>  
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r tv&aring; heltal: h&ouml;jden (1
+&le; <i>h</i> &le; 20) och bredden (1 &le; <i>w</i> &le; 40) p&aring;
+v&auml;ggen. D&auml;refter f&ouml;ljer <i>h</i> rader, var och en
+innh&aring;llande en str&auml;ng best&aring;ende av exakt <i>w</i> tecken.
+Varje tecken i str&auml;ngen &auml;r antingen ett 'X' (en bricka) eller
+ett '.' (ett ledigt utrymme). Den sista raden motsvarar den del av
+v&auml;ggen som &auml;r n&auml;rmast marken.<br>
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut en rad med ett heltal: det minsta antal
+brickor jag beh&ouml;ver inhandla f&ouml;r att stadga upp de redan
+existerande brickorna.
+ </p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+4 12
+..X...X.....
+....X.X...XX
+...........X
+..X.......X.
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+8
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg2"><h1>Uppgift 2 - R&ouml;stk&ouml;p</h1></a>
+<p><b>Problem id: rostkop</b></p>
+<p>
+Karl-Gunnar kandiderar till ordf&ouml;randeposten i sin
+idrottsf&ouml;rening och vill inte riskera att f&ouml;rlora
+omr&ouml;stningen. Han har lyckats f&aring; reda p&aring; vilken
+kandidat varje medlem t&auml;nker r&ouml;sta p&aring; och t&auml;nker
+helt enkelt muta ett antal medlemmar s&aring; att de r&ouml;star
+p&aring; honom ist&auml;llet. Skriv ett program som ber&auml;knar hur
+m&aring;nga r&ouml;ster som m&aring;ste k&ouml;pas (d.v.s. medlemmar
+som beh&ouml;ver mutas) f&ouml;r att Karl-Gunnar ska vinna
+omr&ouml;stningen. F&ouml;r att vinna kr&auml;vs att man f&aring;r fler
+r&ouml;ster &auml;n var och en av de andra kandidaterna.
+  </p>
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r ett heltal: antalet kandidater (1
+&le; <i>n</i> &le; 20). P&aring; andra raden st&aring;r <i>n</i> heltal (mellan 0
+och 1000): antalet r&ouml;ster varje kandidat skulle f&aring; utan
+mutor. Det f&ouml;rsta talet anger Karl-Gunnars r&ouml;ster.</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut en rad med ett heltal: det minsta antalet
+r&ouml;ster som beh&ouml;ver k&ouml;pas f&ouml;r att Karl-Gunnar ska
+f&aring; fler r&ouml;ster &auml;n var och en av de &ouml;vriga
+kandidaterna.
+  </p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+4
+2 5 7 8
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+5
+</pre>
+</div>
+<div class="sample">
+<h2>Exempel: F&ouml;rklaring</h2>
+<p>
+Karl-Gunnar kan t.ex. köpa 3 r&ouml;ster som skulle tillfallit den fj&auml;rde kandidaten samt 2 r&ouml;ster som skulle tillfallit den tredje kandidaten. D&aring; f&aring;r han sj&auml;lv 7 röster medan &ouml;vriga kandidater f&aring;r 5 r&ouml;ster.
+</p>
+</div>
+
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg3"><h1>Uppgift 3 - Gruppindelning</h1></a>
+<p><b>Problem id: gruppindelning</b></p>
+<p>
+Under en skolutflykt ska eleverna delas in i olika grupper.
+Naturligtvis vill eleverna vara i samma grupp som sina kompisar. Skriv
+ett program som, givet namnet p&aring; varje elev samt vem som &auml;r
+kompis med vem, ber&auml;knar det maximala antalet grupper som eleverna
+kan delas in i (om eleverna f&aring;r som de vill).
+</p>
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r ett heltal: antalet elever
+som ska p&aring; utflykt (2 &le; <i>n</i> &le; 100). D&auml;refter f&ouml;ljer <i>n</i> rader, var och en
+inneh&aring;llande namnet p&aring; en elev. Varje namn &auml;r mellan 1
+och 20 tecken l&aring;ngt och inneh&aring;ller endast bokst&auml;verna
+A-Z. Alla elever har olika namn. Sedan f&ouml;ljer en rad med ett heltal: antalet kompispar (1 &le; <i>m</i> &le; 5050). Slutligen f&ouml;ljer <i>m</i> rader
+inneh&aring;llande kompisparen. F&ouml;r varje par anges tv&aring; namn
+p&aring; samma rad, separerade med ett mellanslag.
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut en rad med ett heltal: det maximala antalet
+grupper som eleverna kan delas in i.
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+6
+KALLE
+MAJA
+SARA
+SVEN
+HUGO
+ANNA
+3
+KALLE ANNA
+MAJA ANNA
+SARA HUGO
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+3
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg4"><h1>Uppgift 4 - Storken</h1></a>
+<p><b>Problem id: storken</b></p>
+<p>
+En ibis-stork som bor vid Assuan-dammen hundra mil upp&aring;t Nilen t&auml;nker h&auml;lsa
+p&aring; en kusin i Nildeltat. Han &auml;r dock ganska lat s&aring; att
+flyga sj&auml;lv &auml;r inget alternativ. Med tanke p&aring; den
+t&auml;ta b&aring;ttrafiken p&aring; Nilen best&auml;mmer han sig
+f&ouml;r att lifta med flodb&aring;tarna. Skriv ett program som, givet
+rutter, avg&aring;ngstider och hastigheter f&ouml;r alla nedstr&ouml;ms
+g&aring;ende b&aring;tar, ber&auml;knar den tidigaste tidpunkten
+storken kan vara framme hos sin sl&auml;kting.
+</p>
+<p>
+Storken &auml;r resklar vid tidpunkten 0 timmar och han befinner sig
+d&aring; vid positionen 0 km. Resm&aring;let ligger vid positionen 1000
+km. Vi antar att storken utan f&ouml;rdr&ouml;jning kan f&ouml;rflytta
+sig i "sidled" &ouml;ver floden, t.ex. fr&aring;n en b&aring;t till en
+annan eller fr&aring;n land till en f&ouml;rbipasserande b&aring;t.
+D&auml;remot v&auml;grar han flyga en enda kilometer l&auml;ngs med
+floden, s&aring; b&aring;tar m&aring;ste anv&auml;ndas f&ouml;r hela
+transporten.
+</p>
+<h2>Indata</h2>
+<p>
+F&ouml;rsta raden inneh&aring;ller ett heltal <i>n</i>, d&auml;r
+1 &le; </i>n</i> &le; 1000: antalet b&aring;tar. D&auml;refter f&ouml;ljer <i>n</i>
+rader som vardera beskriver en b&aring;t. Varje rad inneh&aring;ller
+fyra heltal: startpositionen <i>s</i>, slutpositionen <i>m</i>, avg&aring;ngstiden <i>t</i>
+samt hastigheten <i>v</i>, vilka uppfyller 0 &le; <i>s</i> &lt; <i>m</i> &le; 2000,
+0 &le; <i>t</i> &le; 1000 och 1 &le; <i>v</i> &le; 50. Positionerna anges i kilometer,
+avg&aring;ngstiden i timmar och hastigheten i kilometer per timme.
+Rutten &auml;r planerad s&aring; att b&aring;ten kommer fram till sin
+slutposition p&aring; ett helt klockslag, d.v.s. restiden (<i>m</i>-<i>s</i>)/<i>v</i>
+&auml;r alltid ett heltal.
+</p>
+<h2>Utdata</h2>
+<p>
+Programmet ska skriva ut en rad med ett heltal: det f&ouml;rsta hela
+klockslaget (d.v.s. antalet timmar efter tidpunkten 0) p&aring; vilket
+storken kan vara hos sin kusin. I samtliga testfall kan storken komma fram.
+</p>
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+5
+250 875 15 25
+0 400 5 20
+500 600 0 20
+50 250 10 40
+600 1100 30 15
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+57
+</pre>
+</div>
+<div class="sample">
+<h2>Exempel: F&ouml;rklaring</h2>
+<p>
+Storken startar sin resa med b&aring;t 2 som avg&aring;r "klockan 5".
+Mellan klockan 12 och 13 blir denna b&aring;t omk&ouml;rd av b&aring;t
+4 och storken flyger &ouml;ver till den. Detta g&ouml;r att storken
+hinner fram till position 250 km precis n&auml;r b&aring;t 1
+avg&aring;r och f&aring;geln kan sedan &aring;ka med denna b&aring;t
+till dess slutposition. D&auml;r f&aring;r storken v&auml;nta i drygt 8
+timmar (p&aring; land) innan b&aring;t 5 kommer f&ouml;rbi och tar
+honom till kusinen, dit han anl&auml;nder strax innan klockan 57.
+</p>
+</div>  
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg5"><h1>Uppgift 5 - P&auml;rlband</h1></a>
+<p><b>Problem id: parlband</b></p>
+<p>
+Du har en upps&auml;ttning p&auml;rlor i olika f&auml;rger som du vill
+rada upp l&auml;ngs ett sn&ouml;re. F&ouml;r att det ska se snyggt ut
+m&aring;ste varje grupp av tre intilliggande p&auml;rlor best&aring; av
+tre olika f&auml;rger. Skriv ett program som, givet antalet p&auml;rlor
+av varje f&auml;rg, ber&auml;knar p&aring; hur m&aring;nga olika
+s&auml;tt p&auml;rlorna kan placeras p&aring; sn&ouml;ret. Alla
+p&auml;rlor m&aring;ste anv&auml;ndas.
+</p>
+<p><img class="figure" src='parlband.png' width="50%"></p>
+<center><i>De tio olika s&auml;tten p&auml;rlorna kan placeras i exemplet.</i></center>
+
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r ett heltal: antalet olika
+f&auml;rger p&aring; p&auml;rlorna (3 &le; <i>n</i> &le; 5). D&auml;refter
+f&ouml;ljer en rad med <i>n</i> heltal: antalet p&auml;rlor av varje f&auml;rg
+(mellan 1 och 8).
+</p>
+<h2>Utdata</h2>
+Programmet ska skriva ut en rad med ett heltal: antalet olika s&auml;tt
+p&auml;rlorna kan placeras p&aring; sn&ouml;ret. Svaret ryms alltid i
+ett 64-bitars heltal (<i>long long</i> i C++ respektive <i>long</i> i Java).
+</p>
+
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+4
+4 3 2 1
+</pre>
+</div>
+
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+10
+</pre>
+</div>
+
+</div>
+<br><br><br>
+<div id='container' style="height:auto;">
+<a name="uppg6"><h1>Uppgift 6 - Pyramidspaning</h1></a>
+<p><b>Problem id: pyramidspaning</b></p>
+<p><img class="figure" src='pyramidspaning1.png' width="50%"></p>
+
+<p>
+Vi antar nu att du vunnit Programmeringsolympiaden och befinner dig i
+Egypten, omgiven av pyramider av varierande h&ouml;jd. Vi antar
+ocks&aring; att marken &auml;r alldeles plan s&aring; att du har fri
+sikt o&auml;ndligt l&aring;ngt &aring;t alla h&aring;ll. P&aring; grund
+av jordklotets kr&ouml;kning finns det &auml;nd&aring; ett
+gr&auml;nsavst&aring;nd <i>s</i> kilometer, f&ouml;r hur l&aring;ngt bort du
+kan se en given pyramid, d&auml;refter kommer den "nedanf&ouml;r
+horisonten". Avst&aring;ndet <i>s</i> beror naturligtvis p&aring; pyramidens
+h&ouml;jd: ju h&ouml;gre den &auml;r desto l&auml;ngre bort kan den
+ses, eftersom vi r&auml;knar att vi ser pyramiden &auml;ven om bara den
+yttersta spetsen sticker upp ovanf&ouml;r horisonten.
+</p>
+<p>
+Om vi antar att dina &ouml;gon befinner sig 1.7 meter &ouml;ver marken
+s&aring; kan <i>s</i> ber&auml;knas med formeln
+<img class="figure" src='pyramidspaning2.png' width="30%">
+d&auml;r <i>h</i> &auml;r pyramidens h&ouml;jd i meter, medan <i>s</i> &auml;r det
+maximala siktavst&aring;ndet i kilometer.</p>
+<p>
+Du f&auml;rdas p&aring; en v&auml;g som genomkorsar &ouml;knen och som
+vi antar &auml;r o&auml;ndligt l&aring;ng, helt rak och f&ouml;ljer
+y-axeln (x=0) i ett t&auml;nkt koordinatsystem. Skriv ett program som,
+givet koordinaterna samt h&ouml;jden f&ouml;r ett antal pyramider,
+ber&auml;knar hur m&aring;nga pyramider du maximalt kan se samtidigt
+fr&aring;n n&aring;gon plats utmed v&auml;gen samt anger det l&auml;ngsta intervall där 
+detta maximala antal kan observeras. Programmet beh&ouml;ver inte ta h&auml;nsyn till att
+pyramiderna kan skymma varandra.</p>
+  
+<h2>Indata</h2>
+<p>
+P&aring; f&ouml;rsta raden st&aring;r ett heltal: antalet pyramider
+(1 &le; n &le; 10000). D&auml;refter f&ouml;ljer <i>n</i> rader med tre
+decimaltal <i>x</i>, <i>y</i> och <i>h</i> p&aring; varje rad, vilka anger koordinaterna
+(-1000 &le; <i>x</i>,<i>y</i> &le; 1000) i kilometer samt h&ouml;jden
+(1 &le; <i>h</i> &le; 1000) i meter f&ouml;r varje pyramid.</p>
+<h2>Utdata</h2>
+P&aring; f&ouml;rsta raden ska programmet skriva ut ett heltal: det
+maximala antalet pyramider som kan ses samtidigt fr&aring;n n&aring;gon
+plats utmed v&auml;gen. P&aring; andra raden ska programmet skriva ut
+tv&aring; decimaltal <i>y<sub>min</sub></i> och <i>y<sub>max</sub></i>, vilka specificerar det l&auml;ngsta kontinuerliga intervall av
+v&auml;gen inom vilket det maximala antalet pyramider kan ses.
+Talen  <i>y<sub>min</sub></i> och <i>y<sub>max</sub></i> m&aring;ste vara korrekta med minst tre decimalers noggrannhet.
+</p>
+<div class="sample">
+<h2>Exempel: Indata</h2>
+<pre>
+4
+-11.0 -17.5 40.5
+-20.5 15.8 35.0
+42.5 12.7 116.4
+-15.3 46.85 8.05
+</pre>
+</div>
+<div class="sample">
+<h2>Exempel: Utdata</h2>
+<pre>
+3
+5.1448 7.5615
+</pre>
+</div>
+
+</div>
+
+</body>
+</html>
